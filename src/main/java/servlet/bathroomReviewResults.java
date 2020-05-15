@@ -19,7 +19,7 @@ import javax.servlet.http.*;
 
 import javax.servlet.annotation.WebServlet;
 
-@WebServlet( name = "results", urlPatterns = {"/assignment8/results"} )
+@WebServlet( name = "results", urlPatterns = {"/final/results"} )
 public class bathroomReviewResults extends HttpServlet {
 
 // Location of servlet.
