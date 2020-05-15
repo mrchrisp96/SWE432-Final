@@ -24,16 +24,7 @@ public class bathroomReviewResults extends HttpServlet {
 
 // Location of servlet.
 static String Domain  = "bathroomreview.herokuapp.com";
-    
-static final String JDBC_DRIVER = "com.mysql.jdbc.Driver";
-static final String DB_URL = "jdbc:mysql://localhost/EMP";
 
-//  Database credentials
-static final String USER = "";
-static final String PASS = "";
-    
-final FirebaseDatabase database = FirebaseDatabase.getInstance();
-DatabaseReference ref = database.getReference("server/saving-data/fireblog");
 
 // Other strings.
 
