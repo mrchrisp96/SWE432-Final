@@ -5,7 +5,7 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=US-ASCII">
   <script>
-    var assignment7 = window.location.origin + "/final";
+    var final = window.location.origin + "/final";
   </script>
 <title>First JSP</title>
 </head>
