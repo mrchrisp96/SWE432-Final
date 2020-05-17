@@ -156,9 +156,8 @@ private void PrintBody (PrintWriter out, HttpServletRequest request)
     out.println("}");
     out.println("ReactDOM.render(<Hello/>, document.getElementById('root'));");
     out.println("</script>");
-    out.println("<body>");
-    out.println("");
-    out.println("<div id=\"root\"></div>");
+    out.println("<body onLoad=\"setFocus()\">");
+//    out.println("<div id=\"root\"></div>");
     out.println("");
     
     if(building != null) {
