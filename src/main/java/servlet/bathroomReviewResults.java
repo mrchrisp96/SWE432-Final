@@ -24,6 +24,7 @@ public class bathroomReviewResults extends HttpServlet {
 
 // Location of servlet.
 static String Domain  = "bathroomreview.herokuapp.com";
+static String RESOURCE_FILE = "allReviews.txt";
 
 
 // Other strings.
@@ -56,26 +57,31 @@ public void doGet (HttpServletRequest request, HttpServletResponse response)
     String odor = request.getParameter("odor");
     String wouldUseAgain = request.getParameter("wouldUseAgain");
     String userComments = request.getParameter("userComments");
-    if(building != null) {
-        try {
-            File file = new File("allReview.txt");
-            if (file.createNewFile()) {
-                System.out.println("File created: " + file.getName());
-            } else {
-                System.out.println("File already exists.");
-            }
-            // Add the reviews here
-            FileWriter myWriter = new FileWriter("allReviews.txt");
-            myWriter.write(building + "," + cleanliness + "," + odor + "," + wouldUseAgain + "," + userComments + "\n");
-            myWriter.close();
-        } catch (IOException e) {
-            System.out.println("An error occurred.");
-            e.printStackTrace();
-        }
-    }
     
    response.setContentType("text/html");
    PrintWriter out = response.getWriter();
+    //    if(building != null) {
+    //        try {
+    //            File file = new File("allReview.txt");
+    //            if (file.createNewFile()) {
+    //                System.out.println("File created: " + file.getName());
+    //            } else {
+    //                System.out.println("File already exists.");
+    //            }
+    //            // Add the reviews here
+    //            FileWriter myWriter = new FileWriter("allReviews.txt");
+    //            myWriter.write(building + "," + cleanliness + "," + odor + "," + wouldUseAgain + "," + userComments + "\n");
+    //            myWriter.close();
+    //        } catch (IOException e) {
+    //            System.out.println("An error occurred.");
+    //            e.printStackTrace();
+    //        }
+    //    }
+    if (building != null ){
+      PrintWriter entriesPrintWriter = new PrintWriter(new FileWriter(RESOURCE_FILE, true), true);
+      entriesPrintWriter.println(building + "," + cleanliness + "," + odor + "," + wouldUseAgain + "," + userComments + "\n");
+      entriesPrintWriter.close();
+    }
    PrintBody(out, request);
    PrintTail(out);
 } // End doGet
@@ -98,6 +104,12 @@ private void PrintBody (PrintWriter out, HttpServletRequest request)
     
     out.println("<html>");
     out.println("<head>");
+    
+    out.println ("<script>");
+    out.println ("  function setFocus(){");
+    out.println ("    document.persist2file.NAME.focus();");
+    out.println ("  }");
+    out.println ("</script>");
 //
     out.println("  <style type=\"text/css\">");
     out.println("  h1{");
@@ -183,9 +195,15 @@ private void PrintBody (PrintWriter out, HttpServletRequest request)
     out.println("<hr class=\"rounded\">");
     
     try {
-        List<String> allLines = Files.readAllLines(Paths.get("allReview.txt"));
+        File file = new File(resourcePath);
+        if(!file.exists()){
+            out.println("<p>No past reviews yet...</p>");
+            return;
+        }
+        BufferedReader bufferedReader = new BufferedReader(new FileReader(RESOURCE_FILE));
+        String line;
         out.println("<p>Review Results</p>");
-        for(String line: allLines) {
+        while ((line = bufferedReader.readLine()) != null) {
             List<String> tempList = Arrays.asList(line.split("\\s*,\\s*"));
             out.println("    <table text-align=\"left\" id=\"your-results\">");
             out.println("        <tr>");

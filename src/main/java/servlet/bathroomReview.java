@@ -68,31 +68,31 @@ private void PrintBody (PrintWriter out)
 //    out.println("<script src=\"js/react-dom.development.min.js\"></script>");
 //    out.println("<script src=\"js/browser.min.js\"></script>");
         
-    out.println("  <style type=\"text/css\">");
-    out.println("  h1{");
-    out.println("    text-align: center;");
-    out.println("    font-size:3em;");
-    out.println("  }");
-    out.println("  h3{");
-    out.println("  text-align: center;");
-    out.println("    font-size:1.25em;");
-    out.println("  }");
-    out.println("  p{");
-    out.println("    text-align: center;");
-    out.println("  }");
-    out.println("  body{");
-    out.println("      background-color: lightblue;");
-    out.println("    padding-left: 10em;");
-    out.println("    padding-right: 10em;");
-    out.println("  }");
-    out.println("  form{");
-    out.println("    text-align: center;");
-    out.println("  }");
-    out.println("  #root{");
-    out.println("    text-align: center;");
-    out.println("    font-size:1.25em;");
-    out.println("  }");
-    out.println("  </style>");
+    out.println("<style type=\"text/css\">");
+    out.println("   h1{");
+    out.println("       text-align: center;");
+    out.println("       font-size:3em;");
+    out.println("   }");
+    out.println("   h3{");
+    out.println("   text-align: center;");
+    out.println("       font-size:1.25em;");
+    out.println("   }");
+    out.println("   p{");
+    out.println("       text-align: center;");
+    out.println("   }");
+    out.println("   body{");
+    out.println("       background-color: lightblue;");
+    out.println("       padding-left: 10em;");
+    out.println("       padding-right: 10em;");
+    out.println("   }");
+    out.println("   form{");
+    out.println("       text-align: center;");
+    out.println("   }");
+    out.println("   #root{");
+    out.println("       text-align: center;");
+    out.println("       font-size:1.25em;");
+    out.println("       }");
+    out.println("   </style>");
     out.println("</head>");
     out.println("");
 
@@ -176,7 +176,7 @@ private void PrintBody (PrintWriter out)
     out.println("<button type=\"submit\" formmethod=\"post\" form=\"myForm\" value=\"Submit\">Submit</button>");
     out.println("");
     out.println("<div id=\"message\"></div>");
-    out.println("    <p><a href=\"https://github.com/mrchrisp96/BathroomReviewReact\">GitHub Executable Code</a></p>");
+    out.println("    <p><a href=\"https://github.com/mrchrisp96/SWE432-Final\">GitHub Executable Code</a></p>");
     out.println("</form>");
     out.println("");
 //    out.println("</div>");
@@ -239,7 +239,7 @@ private void PrintBody (PrintWriter out)
     out.println("}");
     out.println("</script>");
     out.println("</body>");
-    out.println("</html>");
+//    out.println("</html>");
     
 } // End PrintBody
 
