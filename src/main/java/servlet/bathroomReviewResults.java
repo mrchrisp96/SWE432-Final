@@ -195,7 +195,7 @@ private void PrintBody (PrintWriter out, HttpServletRequest request)
     out.println("<hr class=\"rounded\">");
     
     try {
-        File file = new File(resourcePath);
+        File file = new File(RESOURCE_FILE);
         if(!file.exists()){
             out.println("<p>No past reviews yet...</p>");
             return;
