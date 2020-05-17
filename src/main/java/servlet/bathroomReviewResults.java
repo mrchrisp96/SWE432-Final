@@ -38,8 +38,20 @@ static String RESOURCE_FILE = "allReviews.txt";
 public void doPost (HttpServletRequest request, HttpServletResponse response)
    throws ServletException, IOException
 {
+    
+    String building = request.getParameter("building");
+    String cleanliness = request.getParameter("cleanliness");
+    String odor = request.getParameter("odor");
+    String wouldUseAgain = request.getParameter("wouldUseAgain");
+    String userComments = request.getParameter("userComments");
+    
     response.setContentType("text/html");
     PrintWriter out = response.getWriter();
+    if (building != null) {
+      PrintWriter entriesPrintWriter = new PrintWriter(new FileWriter(RESOURCE_FILE, true), true);
+      entriesPrintWriter.println(building + "," + cleanliness + "," + odor + "," + wouldUseAgain + "," + userComments + "\n");
+      entriesPrintWriter.close();
+    }
     PrintBody(out, request);
     PrintTail(out);
 }  // End doPost
@@ -52,11 +64,6 @@ public void doGet (HttpServletRequest request, HttpServletResponse response)
        throws ServletException, IOException
 {
     //   RequestDispatcher view = request.getRequestDispatcher(indexpage);
-    String building = request.getParameter("building");
-    String cleanliness = request.getParameter("cleanliness");
-    String odor = request.getParameter("odor");
-    String wouldUseAgain = request.getParameter("wouldUseAgain");
-    String userComments = request.getParameter("userComments");
     
    response.setContentType("text/html");
    PrintWriter out = response.getWriter();
@@ -77,11 +84,6 @@ public void doGet (HttpServletRequest request, HttpServletResponse response)
     //            e.printStackTrace();
     //        }
     //    }
-    if (building != null ){
-      PrintWriter entriesPrintWriter = new PrintWriter(new FileWriter(RESOURCE_FILE, true), true);
-      entriesPrintWriter.println(building + "," + cleanliness + "," + odor + "," + wouldUseAgain + "," + userComments + "\n");
-      entriesPrintWriter.close();
-    }
    PrintBody(out, request);
    PrintTail(out);
 } // End doGet
