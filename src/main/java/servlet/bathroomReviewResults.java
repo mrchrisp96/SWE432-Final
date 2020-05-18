@@ -184,51 +184,10 @@ private void PrintBody (PrintWriter out, HttpServletRequest request)
         out.println("<a href=\"https://bathroomreview.herokuapp.com/assignment8\"> <button>New review</button></a>");
         out.println("</p>");
     }
-    out.println("<p>No past reviews yet...</p>");
 
     out.println("<hr class=\"rounded\">");
-    
-//    try {
-//        File file = new File(RESOURCE_FILE);
-//        if(!file.exists()) {
-//            out.println("<p>No past reviews yet...</p>");
-//            return;
-//        }
-//        BufferedReader bufferedReader = new BufferedReader(new FileReader(RESOURCE_FILE));
-//        String line;
+    out.println("<p>No past reviews yet...</p>");
 
-//        out.println("<p>Review Results</p>");
-//        while ((line = bufferedReader.readLine()) != null) {
-//            List<String> tempList = Arrays.asList(line.split("\\s*,\\s*"));
-//            out.println("    <table text-align=\"left\" id=\"your-results\">");
-//            out.println("        <tr>");
-//            out.println("            <th>Building</th>");
-//            out.println("            <td>" + tempList.indexOf(0) + "</td>");
-//            out.println("        </tr>");
-//            out.println("        <tr>");
-//            out.println("            <th>Cleanliness</th>");
-//            out.println("            <td>" + tempList.indexOf(1) + "</td>");
-//            out.println("        </tr>");
-//            out.println("        <tr>");
-//            out.println("            <th>Odor</th>");
-//            out.println("            <td>" + tempList.indexOf(2) + "</td>");
-//            out.println("        </tr>");
-//            out.println("        <tr>");
-//            out.println("            <th>Would you use this restroom again?</th>");
-//            out.println("            <td>" + tempList.indexOf(3) + "</td>");
-//            out.println("        </tr>");
-//            out.println("        <tr>");
-//            out.println("            <th>Additional comments</th>");
-//            out.println("            <td>" + tempList.indexOf(4) + "</td>");
-//            out.println("        </tr>");
-//            out.println("   </table>");
-//            out.println("  <br/>");
-//        }
-//    } catch (FileNotFoundException ex) {
-//        ex.printStackTrace();
-//    } catch (IOException e) {
-//        e.printStackTrace();
-//    }
     out.println("  <br/><br/>");
     out.println("");
     out.println("</body>");
