@@ -68,11 +68,11 @@ private void PrintBody (PrintWriter out)
 //    out.println("<script src=\"js/react-dom.development.min.js\"></script>");
 //    out.println("<script src=\"js/browser.min.js\"></script>");
     
-    out.println ("<script>");
-    out.println ("  function setFocus(){");
-    out.println ("    document.persist2file.NAME.focus();");
-    out.println ("  }");
-    out.println ("</script>");
+//    out.println ("<script>");
+//    out.println ("  function setFocus(){");
+//    out.println ("    document.persist2file.NAME.focus();");
+//    out.println ("  }");
+//    out.println ("</script>");
         
     out.println("<style type=\"text/css\">");
     out.println("   h1{");
