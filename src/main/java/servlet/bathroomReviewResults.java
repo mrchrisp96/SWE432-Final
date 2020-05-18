@@ -188,7 +188,9 @@ private void PrintBody (PrintWriter out, HttpServletRequest request)
     }
     out.println("<hr class=\"rounded\">");
     
-    try {
+    out.println("<p>No past reviews yet...</p>");
+    
+//    try {
 //        File file = new File(RESOURCE_FILE);
 //        if(!file.exists()) {
 //            out.println("<p>No past reviews yet...</p>");
@@ -196,7 +198,6 @@ private void PrintBody (PrintWriter out, HttpServletRequest request)
 //        }
 //        BufferedReader bufferedReader = new BufferedReader(new FileReader(RESOURCE_FILE));
 //        String line;
-        out.println("<p>No past reviews yet...</p>");
 
 //        out.println("<p>Review Results</p>");
 //        while ((line = bufferedReader.readLine()) != null) {
@@ -225,11 +226,11 @@ private void PrintBody (PrintWriter out, HttpServletRequest request)
 //            out.println("   </table>");
 //            out.println("  <br/>");
 //        }
-    } catch (FileNotFoundException ex) {
-        ex.printStackTrace();
-    } catch (IOException e) {
-        e.printStackTrace();
-    }
+//    } catch (FileNotFoundException ex) {
+//        ex.printStackTrace();
+//    } catch (IOException e) {
+//        e.printStackTrace();
+//    }
     out.println("  <br/><br/>");
     out.println("");
     out.println("</body>");
