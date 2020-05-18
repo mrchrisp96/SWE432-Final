@@ -4,6 +4,7 @@ package servlet;
 import java.io.*;
 import java.util.*;
 
+import java.io.FileNotFoundException;
 import java.io.BufferedReader;
 import java.io.File;
 import java.nio.file.Files;
@@ -38,20 +39,8 @@ static String RESOURCE_FILE = "allReviews.txt";
 public void doPost (HttpServletRequest request, HttpServletResponse response)
    throws ServletException, IOException
 {
-    
-    String building = request.getParameter("building");
-    String cleanliness = request.getParameter("cleanliness");
-    String odor = request.getParameter("odor");
-    String wouldUseAgain = request.getParameter("wouldUseAgain");
-    String userComments = request.getParameter("userComments");
-    
     response.setContentType("text/html");
     PrintWriter out = response.getWriter();
-    if (building != null) {
-      PrintWriter entriesPrintWriter = new PrintWriter(new FileWriter(RESOURCE_FILE, true), true);
-      entriesPrintWriter.println(building + "," + cleanliness + "," + odor + "," + wouldUseAgain + "," + userComments + "\n");
-      entriesPrintWriter.close();
-    }
     PrintBody(out, request);
     PrintTail(out);
 }  // End doPost
@@ -64,6 +53,11 @@ public void doGet (HttpServletRequest request, HttpServletResponse response)
        throws ServletException, IOException
 {
     //   RequestDispatcher view = request.getRequestDispatcher(indexpage);
+    String building = request.getParameter("building");
+    String cleanliness = request.getParameter("cleanliness");
+    String odor = request.getParameter("odor");
+    String wouldUseAgain = request.getParameter("wouldUseAgain");
+    String userComments = request.getParameter("userComments");
     
    response.setContentType("text/html");
    PrintWriter out = response.getWriter();
@@ -84,6 +78,11 @@ public void doGet (HttpServletRequest request, HttpServletResponse response)
     //            e.printStackTrace();
     //        }
     //    }
+    if (building != null) {
+      PrintWriter entriesPrintWriter = new PrintWriter(new FileWriter(RESOURCE_FILE, true), true);
+      entriesPrintWriter.println(building + "," + cleanliness + "," + odor + "," + wouldUseAgain + "," + userComments + "\n");
+      entriesPrintWriter.close();
+    }
    PrintBody(out, request);
    PrintTail(out);
 } // End doGet
@@ -197,7 +196,7 @@ private void PrintBody (PrintWriter out, HttpServletRequest request)
     
     try {
         File file = new File(RESOURCE_FILE);
-        if(!file.exists()){
+        if(!file.exists()) {
             out.println("<p>No past reviews yet...</p>");
             return;
         }
@@ -232,6 +231,9 @@ private void PrintBody (PrintWriter out, HttpServletRequest request)
         }
     } catch (IOException e) {
         e.printStackTrace();
+    } catch (FileNotFoundException ex) {
+        ex.printStackTrace();
+        out.println("<p>No past reviews yet...</p>");
     }
     out.println("  <br/><br/>");
     out.println("");
