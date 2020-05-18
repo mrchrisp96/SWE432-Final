@@ -141,17 +141,8 @@ private void PrintBody (PrintWriter out, HttpServletRequest request)
     out.println("  </style>");
     out.println("</head>");
     out.println("");
-//
-    out.println("<script type=\"text/babel\">");
-    out.println("const Hello = () => {");
-    out.println("return (");
-    out.println("<h1>GMU Bathroom Review Results</h1>");
-    out.println(");");
-    out.println("}");
-    out.println("ReactDOM.render(<Hello/>, document.getElementById('root'));");
-    out.println("</script>");
     out.println("<body>");
-    out.println("<div id=\"root\"></div>");
+    out.println("<h1>GMU Bathroom Review Results</h1>");
     if(building != null) {
         out.println("<p>Review Results</p>");
         out.println("    <table text-align=\"left\" id=\"your-results\">");
@@ -193,7 +184,6 @@ private void PrintBody (PrintWriter out, HttpServletRequest request)
         }
         BufferedReader bufferedReader = new BufferedReader(new FileReader(RESOURCE_FILE));
         String line;
-
         out.println("<p>Review Results</p>");
         while ((line = bufferedReader.readLine()) != null) {
             List<String> tempList = Arrays.asList(line.split("\\s*,\\s*"));
