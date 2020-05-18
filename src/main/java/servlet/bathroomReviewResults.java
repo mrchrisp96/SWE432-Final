@@ -230,9 +230,9 @@ private void PrintBody (PrintWriter out, HttpServletRequest request)
             out.println("  <br/>");
         }
     } catch (FileNotFoundException ex) {
-        e.printStackTrace();
-    } catch (IOException e) {
         ex.printStackTrace();
+    } catch (IOException e) {
+        e.printStackTrace();
     }
     out.println("  <br/><br/>");
     out.println("");
