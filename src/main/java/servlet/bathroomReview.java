@@ -67,6 +67,12 @@ private void PrintBody (PrintWriter out)
 //    out.println("<script src=\"js/react.development.min.js\"></script>");
 //    out.println("<script src=\"js/react-dom.development.min.js\"></script>");
 //    out.println("<script src=\"js/browser.min.js\"></script>");
+    
+    out.println ("<script>");
+    out.println ("  function setFocus(){");
+    out.println ("    document.persist2file.NAME.focus();");
+    out.println ("  }");
+    out.println ("</script>");
         
     out.println("<style type=\"text/css\">");
     out.println("   h1{");
@@ -110,7 +116,7 @@ private void PrintBody (PrintWriter out)
     out.println("<h1>GMU Bathroom Reviewer</h1>");
     out.println("<p>This web app allows you to review the bathrooms of a building at GMU in Fairfax</p>");
     out.println("<h3>Please select a building</h3>");
-    out.println("<form method=\"post\" onsubmit=\"getScore(event);\" action=\"https://bathroomreview.herokuapp.com/assignment8/results\" id=\"myForm\">");
+    out.println("<form method=\"post\" name=\"persist2file\" onsubmit=\"getScore(event);\" action=\"https://bathroomreview.herokuapp.com/assignment8/results\" id=\"myForm\">");
     out.println("<select name=\"building\" id=\"building\">");
     out.println("    <option value=\"Volgenau School of Engineering\" selected=\"selected\">Volgenau School of Engineering</option>");
     out.println("    <option value=\"Music Theater Building\">Music Theater Building</option>");

@@ -105,12 +105,6 @@ private void PrintBody (PrintWriter out, HttpServletRequest request)
     
     out.println("<html>");
     out.println("<head>");
-    
-    out.println ("<script>");
-    out.println ("  function setFocus(){");
-    out.println ("    document.persist2file.NAME.focus();");
-    out.println ("  }");
-    out.println ("</script>");
 //
     out.println("  <style type=\"text/css\">");
     out.println("  h1{");
@@ -157,7 +151,7 @@ private void PrintBody (PrintWriter out, HttpServletRequest request)
     out.println("}");
     out.println("ReactDOM.render(<Hello/>, document.getElementById('root'));");
     out.println("</script>");
-    out.println("<body onLoad=\"setFocus()\">");
+    out.println("<body>");
 //    out.println("<div id=\"root\"></div>");
     out.println("");
     
