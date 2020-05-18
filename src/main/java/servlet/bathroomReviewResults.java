@@ -24,7 +24,6 @@ import javax.servlet.annotation.WebServlet;
 public class bathroomReviewResults extends HttpServlet {
 
 // Location of servlet.
-static String Domain  = "bathroomreview.herokuapp.com";
 static String RESOURCE_FILE = "allReviews.txt";
 
 
@@ -181,7 +180,7 @@ private void PrintBody (PrintWriter out, HttpServletRequest request)
     } else {
         out.println("<p>Click the button below to start a new review!</p>");
         out.println("<p>");
-        out.println("<a href=\"https://bathroomreview.herokuapp.com/assignment8\"> <button>New review</button></a>");
+        out.println("<a href=\"https://bathroomreview.herokuapp.com/final\"> <button>New review</button></a>");
         out.println("</p>");
     }
 
