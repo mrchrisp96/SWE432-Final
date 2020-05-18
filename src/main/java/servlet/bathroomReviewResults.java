@@ -229,11 +229,10 @@ private void PrintBody (PrintWriter out, HttpServletRequest request)
             out.println("   </table>");
             out.println("  <br/>");
         }
-    } catch (IOException e) {
-        e.printStackTrace();
     } catch (FileNotFoundException ex) {
+        e.printStackTrace();
+    } catch (IOException e) {
         ex.printStackTrace();
-        out.println("<p>No past reviews yet...</p>");
     }
     out.println("  <br/><br/>");
     out.println("");
