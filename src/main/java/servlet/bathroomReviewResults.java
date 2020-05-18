@@ -153,8 +153,6 @@ private void PrintBody (PrintWriter out, HttpServletRequest request)
     out.println("</script>");
     out.println("<body>");
 //    out.println("<div id=\"root\"></div>");
-    out.println("");
-    
     if(building != null) {
         out.println("<p>Review Results</p>");
         out.println("    <table text-align=\"left\" id=\"your-results\">");
@@ -186,9 +184,9 @@ private void PrintBody (PrintWriter out, HttpServletRequest request)
         out.println("<a href=\"https://bathroomreview.herokuapp.com/assignment8\"> <button>New review</button></a>");
         out.println("</p>");
     }
-    out.println("<hr class=\"rounded\">");
-    
     out.println("<p>No past reviews yet...</p>");
+
+    out.println("<hr class=\"rounded\">");
     
 //    try {
 //        File file = new File(RESOURCE_FILE);
