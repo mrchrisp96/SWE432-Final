@@ -27,6 +27,7 @@ public class bathroomReviewResults extends HttpServlet {
 static String RESOURCE_FILE = "allReviews.txt";
 
 
+
 // Other strings.
 
 /** *****************************************************
@@ -148,30 +149,30 @@ private void PrintBody (PrintWriter out, HttpServletRequest request)
     if(predicate != null) {
         List<String> predicateList = new ArrayList<String>(Arrays.asList(predicate.split(",")));
         for(int i = 0; i < predicateList.size(); i++) {
-            List<String> predicateSplit = new ArrayList<String>(Arrays.asList(predicateList.indexOf(0).split(" ")));
+//            List<String> predicateSplit = new ArrayList<String>(Arrays.asList(predicateList.indexOf(0).split(" ")));
             out.println("<p>" + predicateList.indexOf(0) + "</p>");
-            List<String> values = new ArrayList<String>();
-            List<String> operator = new ArrayList<String>();
-            for(int y = 0; y < predicateSplit.size(); y++) {
-                if(predicateSplit.indexOf(y) != "and" || predicateSplit.indexOf(y) != "or" || predicateSplit.indexOf(y) != "||" || predicateSplit.indexOf(y) != "&&") {
-                    values.append(predicateSplit.indexOf(y));
-                } else {
-                    operator.append(predicateSplit.indexOf(y));
-                }
-            }
-            out.println("    <table text-align=\"left\" id=\"your-results\">");
-            out.println("        <tr>");
-            for(int g = 0; g < values.size(); g++) {
-                out.println("            <th>" + valuesindexOf(g) + "</th>");
-            }
-            out.println("        </tr>");
-//            for(int x = 0; x < )
+//            List<String> values = new ArrayList<String>();
+//            List<String> operator = new ArrayList<String>();
+//            for(int y = 0; y < predicateSplit.size(); y++) {
+//                if(predicateSplit.indexOf(y) != "and" || predicateSplit.indexOf(y) != "or" || predicateSplit.indexOf(y) != "||" || predicateSplit.indexOf(y) != "&&") {
+//                    values.append(predicateSplit.indexOf(y));
+//                } else {
+//                    operator.append(predicateSplit.indexOf(y));
+//                }
+//            }
+//            out.println("    <table text-align=\"left\" id=\"your-results\">");
 //            out.println("        <tr>");
-//            out.println("            <th>" + values[i] + "</th>");
-//            out.println("            <th>" + values[i] + "</th>");
-//            out.println("            <th>" + values[i] + "</th>");
+//            for(int g = 0; g < values.size(); g++) {
+//                out.println("            <th>" + valuesindexOf(g) + "</th>");
+//            }
 //            out.println("        </tr>");
-            out.println("   </table>");
+////            for(int x = 0; x < )
+////            out.println("        <tr>");
+////            out.println("            <th>" + values[i] + "</th>");
+////            out.println("            <th>" + values[i] + "</th>");
+////            out.println("            <th>" + values[i] + "</th>");
+////            out.println("        </tr>");
+//            out.println("   </table>");
             out.println("<br/><br/>");
         }
     } else {
