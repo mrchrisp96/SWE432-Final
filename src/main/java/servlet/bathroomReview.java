@@ -113,7 +113,7 @@ private void PrintBody (PrintWriter out)
     
     out.println("<body>");
     out.println("");
-    out.println("<h1>GMU Bathroom Reviewer</h1>");
+    out.println("<h1>GMU Final Exam</h1>");
     out.println("<p>This web app allows you to review the bathrooms of a building at GMU in Fairfax</p>");
     out.println("<h3>Please select a building</h3>");
     out.println("<form method=\"post\" name=\"persist2file\" onsubmit=\"getScore(event);\" action=\"https://swe432-final.herokuapp.com/final/results\" id=\"myForm\">");
@@ -225,18 +225,6 @@ private void PrintBody (PrintWriter out)
     out.println("           event.preventDefault();");
     out.println("       } else {");
     out.println("           window.alert(\"Restroom review score: \" + score + \" out of 100\");");
-//    out.println("           commentStr = document.getElementById(\"userComments\").value;");
-//    out.println("           buildingStr = document.getElementById(\"building\").value;");
-//    out.println("           let payLoad = [buildingStr, cleanStr, odorStr, would, commentStr]\n");
-//    out.println("           set fso = CreateObject(\"Scripting.FileSystemObject\");");
-//    out.println("           set s = fso.CreateTextFile(\"allReviews.txt\", True);");
-//    out.println("           s.writeline(\"Building: \" + buildingStr);");
-//    out.println("           s.writeline(\"Cleanliness: \" + buildingStr);");
-//    out.println("           s.writeline(\"Odor: \" + buildingStr);");
-//    out.println("           s.writeline(\"Would: \" + buildingStr);");
-//    out.println("           s.writeline(\"Comment: \" + buildingStr);");
-//    out.println("           s.writeline(\"-\");");
-//    out.println("           s.Close();");
     out.println("       }");
     out.println("   } else {");
     out.println("       window.alert(\"Please input a comment!\");");

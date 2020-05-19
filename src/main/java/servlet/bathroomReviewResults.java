@@ -142,7 +142,7 @@ private void PrintBody (PrintWriter out, HttpServletRequest request)
     out.println("</head>");
     out.println("");
     out.println("<body>");
-    out.println("<h1>GMU Bathroom Review Results</h1>");
+    out.println("<h1>GMU Final Exam Results</h1>");
     if(building != null) {
         out.println("<p>Review Results</p>");
         out.println("    <table text-align=\"left\" id=\"your-results\">");
