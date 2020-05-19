@@ -81,7 +81,7 @@ public void doGet (HttpServletRequest request, HttpServletResponse response)
  *  Prints the <head> of the HTML page, no <body>.
 ********************************************************* */
     
-private int printTruthTable(integer N, integer index, integer array truthVals) {
+private void printTruthTable(integer N, integer index, integer array truthVals) {
    if (index == N) {
        for (i=0; i<N; i++) {
            print(truthVals[i] + " ");
