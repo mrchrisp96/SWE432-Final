@@ -103,7 +103,7 @@ private void PrintBody (PrintWriter out, HttpServletRequest request)
 {
     
     String predicate = request.getParameter("predicate").toLowerCase();
-    List<Integer> boolVals = Arrays.asList(0, 1);
+//    List<Integer> boolVals = Arrays.asList(0, 1);
 
     out.println("<html>");
     out.println("<head>");
@@ -153,7 +153,7 @@ private void PrintBody (PrintWriter out, HttpServletRequest request)
             out.println("<p>" + eachPred + "</p>");
             List<String> values = new ArrayList<String>();
             List<String> operator = new ArrayList<String>();
-            for(int y = 0; y < predicateSplit.size(); y++) {
+            for(String i: predicateSplit) {
                 if(eachPred.indexOf(y) != "and" || predicateSplit.indexOf(y) != "or" || predicateSplit.indexOf(y) != "||" || predicateSplit.indexOf(y) != "&&") {
                     values.append(predicateSplit.indexOf(y));
                 } else {
