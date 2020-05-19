@@ -115,6 +115,7 @@ private void PrintBody (PrintWriter out)
     out.println("");
     out.println("<h1>SWE432 Final Exam</h1>");
     out.println("<p>(Insert final exam topic here)</p>");
+    out.println("<p>Christopher Park, G00906790</p>");
     out.println("<h3>Please select a building</h3>");
     out.println("<form method=\"post\" name=\"persist2file\" onsubmit=\"getScore(event);\" action=\"https://swe432-final.herokuapp.com/final/results\" id=\"myForm\">");
     out.println("<select name=\"building\" id=\"building\">");
@@ -182,7 +183,6 @@ private void PrintBody (PrintWriter out)
     out.println("<button type=\"submit\" formmethod=\"post\" form=\"myForm\" value=\"Submit\">Submit</button>");
     out.println("");
     out.println("<div id=\"message\"></div>");
-    out.println("<p>Christopher Park, G00906790</p>");
     out.println("<p><a href=\"https://github.com/mrchrisp96/SWE432-Final\">GitHub code for final</a></p>");
     out.println("</form>");
     out.println("");

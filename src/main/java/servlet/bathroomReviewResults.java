@@ -142,7 +142,7 @@ private void PrintBody (PrintWriter out, HttpServletRequest request)
     out.println("</head>");
     out.println("");
     out.println("<body>");
-    out.println("<h1>GMU Final Exam Results</h1>");
+    out.println("<h1>SWE432 Final Exam Results</h1>");
     if(building != null) {
         out.println("<p>Review Results</p>");
         out.println("    <table text-align=\"left\" id=\"your-results\">");
@@ -169,7 +169,7 @@ private void PrintBody (PrintWriter out, HttpServletRequest request)
         out.println("   </table>");
         out.println("<br/><br/>");
     } else {
-        out.println("<p>Click the button below to start a new review!</p>");
+        out.println("<p>Click the link below to start a new review!</p>");
         out.println("<p>");
         out.println("<a href=\"https://swe432-final.herokuapp.com/final\">New Review</a>");
         out.println("</p>");
