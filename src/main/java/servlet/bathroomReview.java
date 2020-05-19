@@ -124,6 +124,8 @@ private void PrintBody (PrintWriter out)
     out.println("<div id=\"message\"></div>");
     out.println("<p><a href=\"https://github.com/mrchrisp96/SWE432-Final\" target=\"_blank\">GitHub code for final</a></p>");
     out.println("<p>Examples: A OR B, A AND B, A | B, A & B, etc...</p>");
+    out.println("<p>Note, please make sure to split different predicates by a comma and the predicate by a space!</p>");
+
     out.println("</form>");
     out.println("");
 //    out.println("</div>");
@@ -137,7 +139,7 @@ private void PrintBody (PrintWriter out)
     out.println("           event.preventDefault();");
     out.println("       }");
     out.println("   } else {");
-    out.println("       window.alert(\"Please input a comment!\");");
+    out.println("       window.alert(\"Please input a predicate!\");");
     out.println("       event.preventDefault();");
     out.println("   }");
     out.println("}");

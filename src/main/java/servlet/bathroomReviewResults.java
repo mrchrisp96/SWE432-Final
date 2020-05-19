@@ -146,7 +146,7 @@ private void PrintBody (PrintWriter out, HttpServletRequest request)
     out.println("<h1>SWE432 Final Exam Results</h1>");
     if(predicate != null) {
         List<String> predicateList = new ArrayList<String>(Arrays.asList(predicate.split(",")));
-        
+        out.println("<p> " + predicate + "</p>");
 //        out.println("<p>" + predicate + "</p>");
 //        out.println("    <table text-align=\"left\" id=\"your-results\">");
 //        out.println("        <tr>");
