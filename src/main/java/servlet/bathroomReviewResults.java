@@ -148,15 +148,15 @@ private void PrintBody (PrintWriter out, HttpServletRequest request)
     if(predicate != null) {
         List<String> predicateList = new ArrayList<String>(Arrays.asList(predicate.split(",")));
         for(int i = 0; i < predicateList.size(); i++) {
-            List<String> predicateSplit = new ArrayList<String>(Arrays.asList(predicateList.indexOf(i).split(" ")));
+            List<String> predicateSplit = new ArrayList<String>(Arrays.asList(predicateList.indexOf(0).split(" ")));
             out.println("<p>" + predicateList.indexOf(0) + "</p>");
             List<String> values = new ArrayList<String>();
             List<String> operator = new ArrayList<String>();
             for(int y = 0; y < predicateSplit.size(); y++) {
-                if(predicateSplit.indexOf(y) != "and" || predicateSplitindexOf(y) != "or" || predicateSplitindexOf(y) != "||" || predicateSplitindexOf(y) != "&&") {
-                    values.append(predicateSplit[i]);
+                if(predicateSplit.indexOf(y) != "and" || predicateSplit.indexOf(y) != "or" || predicateSplit.indexOf(y) != "||" || predicateSplit.indexOf(y) != "&&") {
+                    values.append(predicateSplit.indexOf(y));
                 } else {
-                    operator.append(predicateSplit[i]);
+                    operator.append(predicateSplit.indexOf(y));
                 }
             }
             out.println("    <table text-align=\"left\" id=\"your-results\">");
