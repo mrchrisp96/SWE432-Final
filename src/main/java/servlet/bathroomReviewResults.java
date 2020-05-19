@@ -156,7 +156,7 @@ private void PrintBody (PrintWriter out, HttpServletRequest request)
             for(String i: predicateSplit) {
                 out.println("<p>" + i + "</p>");
                 if(i != "and" || i != "or" || i != "||" || i != "&&") {
-                    values.add(predicateList);
+                    values.add(i);
                 } else {
                     operator.add(i);
                 }
@@ -164,10 +164,10 @@ private void PrintBody (PrintWriter out, HttpServletRequest request)
             out.println("    <table text-align=\"left\" id=\"your-results\">");
             out.println("        <tr>");
             for(String val: values) {
-                out.println("            <th>" + val + "</th>");
+                out.println("            <th>" + val.toUpperCase() + "</th>");
             }
             out.println("        </tr>");
-            for(int x = 0; x < values.size(); i++) {
+            for(int x = 0; x < 2^values.size(); x++) {
                 out.println("        <tr>");
                 out.println("            <th>" + values[i] + "</th>");
                 out.println("            <th>" + values[i] + "</th>");
