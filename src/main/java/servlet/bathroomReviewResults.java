@@ -191,7 +191,7 @@ private void PrintBody (PrintWriter out, HttpServletRequest request)
 
             int size = values.size();
             int rows = Math.pow(2, size);
-            for (int i=0; i < size; i++) {
+            for (int i = 0; i < size; i++) {
                 out.println("        <tr>");
                 int divider = 1;
                 int curResult = 0;
