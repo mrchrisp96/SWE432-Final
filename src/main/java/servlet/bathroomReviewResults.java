@@ -149,7 +149,7 @@ private void PrintBody (PrintWriter out, HttpServletRequest request)
         List<String> predicateList = new ArrayList<String>(Arrays.asList(predicate.split(",")));
         for(int i = 0; i < predicateList.size(); i++) {
 //            List<String> predicateSplit = new ArrayList<String>(Arrays.asList(predicateList[i].split(" ")));
-            out.println("<p>" + predicateList[0] + "</p>");
+            out.println("<p>" + predicateList.indexOf(0) + "</p>");
 //            List<String> values = new ArrayList<String>();
 //            List<String> operator = new ArrayList<String>();
 //            for(int y = 0; y < predicateSplit.size(); y++) {
