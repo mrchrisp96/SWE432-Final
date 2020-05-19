@@ -102,7 +102,7 @@ public void doGet (HttpServletRequest request, HttpServletResponse response)
 private void PrintBody (PrintWriter out, HttpServletRequest request)
 {
     String predicate = request.getParameter("predicate");
-    int[] myIntArray = {0, 1};
+    String[] myIntArray = {"True", "False"};
 //    List<Integer> boolVals = Arrays.asList(0, 1);
 
     out.println("<html>");
@@ -155,7 +155,6 @@ private void PrintBody (PrintWriter out, HttpServletRequest request)
             List<String> values = new ArrayList<String>();
             List<String> operator = new ArrayList<String>();
             for(String i: predicateSplit) {
-                out.println("<p>" + i + "</p>");
                 if(!i.equals("and") && !i.equals("or") && !i.equals("||") && !i.equals("&&") && !i.equals("&") && !i.equals("|")) {
                     values.add(i);
                 } else {
