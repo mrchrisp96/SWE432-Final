@@ -154,25 +154,28 @@ private void PrintBody (PrintWriter out, HttpServletRequest request)
             List<String> values = new ArrayList<String>();
             List<String> operator = new ArrayList<String>();
             for(String i: predicateSplit) {
-                if(i != "and" || i != "or" || i != "||" || i != "&&") {
-                    values.append(i);
-                } else {
-                    operator.append(i);
-                }
+                out.println("<p>" + i + "</p>");
+//                if(i != "and" || i != "or" || i != "||" || i != "&&") {
+////                    values.append(i);
+//                } else {
+////                    operator.append(i);
+//                    out.println("<p>" + i + "</p>");
+//                }
             }
             out.println("    <table text-align=\"left\" id=\"your-results\">");
             out.println("        <tr>");
-            for(String val: values) {
-                out.println("            <th>" + val + "</th>");
-            }
-            out.println("        </tr>");
-////            for(int x = 0; x < )
-////            out.println("        <tr>");
-////            out.println("            <th>" + values[i] + "</th>");
-////            out.println("            <th>" + values[i] + "</th>");
-////            out.println("            <th>" + values[i] + "</th>");
-////            out.println("        </tr>");
-//            out.println("   </table>");
+//            for(String val: values) {
+//                out.println("            <th>" + val + "</th>");
+//            }
+//            out.println("        </tr>");
+//            for(int x = 0; x < ) {
+//                out.println("        <tr>");
+//                out.println("            <th>" + values[i] + "</th>");
+//                out.println("            <th>" + values[i] + "</th>");
+//                out.println("            <th>" + values[i] + "</th>");
+//                out.println("        </tr>");
+//            }
+            out.println("   </table>");
             out.println("<br/><br/>");
         }
     } else {
