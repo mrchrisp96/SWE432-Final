@@ -166,6 +166,7 @@ private void PrintBody (PrintWriter out, HttpServletRequest request)
         predicate = predicate.toLowerCase();
         List<String> predicateList = new ArrayList<String>(Arrays.asList(predicate.split(",")));
         for(String eachPred: predicateList) {
+            int rowSize = 0;
             eachPred = eachPred.trim();
             List<String> predicateSplit = new ArrayList<String>(Arrays.asList(eachPred.split(" ")));
             List<String> values = new ArrayList<String>();
@@ -173,6 +174,7 @@ private void PrintBody (PrintWriter out, HttpServletRequest request)
             for(String i: predicateSplit) {
                 if(!i.equals("and") && !i.equals("or") && !i.equals("||") && !i.equals("&&") && !i.equals("&") && !i.equals("|")) {
                     values.add(i);
+                    rowSize++;
                 } else {
                     operator.add(i);
                 }
@@ -189,9 +191,7 @@ private void PrintBody (PrintWriter out, HttpServletRequest request)
 //            String[] temp = new String[Math.pow(2, values.size())];
 //            String[] allRows = printTruthTable(values.size(), 0, temp, emptyStr);
 
-            int size = values.size();
-            int rows = Math.pow(2, size);
-            for (int i = 0; i < size; i++) {
+            for (int i = 0; i < rowSize; i++) {
                 out.println("        <tr>");
                 int divider = 1;
                 int curResult = 0;
