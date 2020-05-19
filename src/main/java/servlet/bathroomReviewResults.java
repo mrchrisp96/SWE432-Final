@@ -148,31 +148,31 @@ private void PrintBody (PrintWriter out, HttpServletRequest request)
     if(predicate != null) {
         List<String> predicateList = new ArrayList<String>(Arrays.asList(predicate.split(",")));
         for(int i = 0; i < predicateList.size(); i++) {
-            out.println("<p>" + predicateSplit[i] + "</p>");
-            List<String> predicateSplit = new ArrayList<String>(Arrays.asList(predicateList[i].split(" ")));
-            List<String> values = new ArrayList<String>();
-            List<String> operator = new ArrayList<String>();
-            for(int y = 0; y < predicateSplit.size(); y++) {
-                if(predicateSplit[y] != "and" || predicateSplit[y] != "or" || predicateSplit[y] != "||" || predicateSplit[y] != "&&") {
-                    values.append(predicateSplit[i]);
-                } else {
-                    operator.append(predicateSplit[i]);
-                }
-            }
-            out.println("    <table text-align=\"left\" id=\"your-results\">");
-            out.println("        <tr>");
-            for(int i = 0; i < values.size(); i++) {
-                out.println("            <th>" + values[i] + "</th>");
-            }
-            out.println("        </tr>");
-//            for(int x = 0; x < )
+//            List<String> predicateSplit = new ArrayList<String>(Arrays.asList(predicateList[i].split(" ")));
+            out.println("<p>" + predicateList[0] + "</p>");
+//            List<String> values = new ArrayList<String>();
+//            List<String> operator = new ArrayList<String>();
+//            for(int y = 0; y < predicateSplit.size(); y++) {
+//                if(predicateSplit[y] != "and" || predicateSplit[y] != "or" || predicateSplit[y] != "||" || predicateSplit[y] != "&&") {
+//                    values.append(predicateSplit[i]);
+//                } else {
+//                    operator.append(predicateSplit[i]);
+//                }
+//            }
+//            out.println("    <table text-align=\"left\" id=\"your-results\">");
 //            out.println("        <tr>");
-//            out.println("            <th>" + values[i] + "</th>");
-//            out.println("            <th>" + values[i] + "</th>");
-//            out.println("            <th>" + values[i] + "</th>");
+//            for(int i = 0; i < values.size(); i++) {
+//                out.println("            <th>" + values[i] + "</th>");
+//            }
 //            out.println("        </tr>");
-            out.println("   </table>");
-            out.println("<br/><br/>");
+////            for(int x = 0; x < )
+////            out.println("        <tr>");
+////            out.println("            <th>" + values[i] + "</th>");
+////            out.println("            <th>" + values[i] + "</th>");
+////            out.println("            <th>" + values[i] + "</th>");
+////            out.println("        </tr>");
+//            out.println("   </table>");
+//            out.println("<br/><br/>");
         }
     } else {
         out.println("<p>Click the link below to start a new truth table!</p>");
