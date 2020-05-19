@@ -152,7 +152,7 @@ private void PrintBody (PrintWriter out, HttpServletRequest request)
             List<String> values = new ArrayList<String>();
             List<String> operator = new ArrayList<String>();
             for(int i = 0; i < predicateSplit.size(); i++) {
-                if(predicateSplit[i] != "and" || predicateSplit[i] != "or" || predicateSplit[i] != "||" || predicateSplit[i] != "&&" ||) {
+                if(predicateSplit[i] != "and" || predicateSplit[i] != "or" || predicateSplit[i] != "||" || predicateSplit[i] != "&&") {
                     values.append(predicateSplit[i]);
                 } else {
                     operator.append(predicateSplit[i]);
