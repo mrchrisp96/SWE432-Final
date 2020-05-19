@@ -196,7 +196,7 @@ private void PrintBody (PrintWriter out, HttpServletRequest request)
                 int divider = 1;
                 int curResult = 0;
                 for (int j = 0; j < values.size(); j++) {
-                    int curVal = (i / divider) % 2);
+                    int curVal = (i / divider) % 2;
                     out.println("            <th>" + curVal + "</th>");
                     divider = divider * 2;
                 }
