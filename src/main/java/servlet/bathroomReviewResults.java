@@ -146,7 +146,7 @@ private void PrintBody (PrintWriter out, HttpServletRequest request)
     out.println("</head>");
     out.println("");
     out.println("<body>");
-    out.println("<h1>SWE432 Final Exam Results</h1>");
+    out.println("<h1>SWE432 Truth Table Results</h1>");
     if(predicate != null) {
         List<String> predicateList = new ArrayList<String>(Arrays.asList(predicate.split(",")));
         for(String eachPred: predicateList) {
@@ -156,7 +156,7 @@ private void PrintBody (PrintWriter out, HttpServletRequest request)
             List<String> operator = new ArrayList<String>();
             for(String i: predicateSplit) {
                 out.println("<p>" + i + "</p>");
-                if(i != "and" || i != "or" || i != "||" || i != "&&") {
+                if(!i.equals("and") || !i.equals"or") || !i.equals("||") || !i.equals("&&") || !i.equals("&") || !i.equals("|")) {
                     values.add(i);
                 } else {
                     operator.add(i);
@@ -167,6 +167,7 @@ private void PrintBody (PrintWriter out, HttpServletRequest request)
             for(String val: values) {
                 out.println("            <th>" + val.toUpperCase() + "</th>");
             }
+            out.println("            <th>Result</th>");
             out.println("        </tr>");
 //            for(int x = 0; x < 2**(values.size() + 1); x++) {
 //                for(int y = 0; y < myIntArray.size(); y++) {
@@ -175,7 +176,7 @@ private void PrintBody (PrintWriter out, HttpServletRequest request)
 //                        out.println("        <tr>");
 //                        out.println("            <th>" + myIntArray[y] + "</th>");
 //                        out.println("            <th>" + myIntArray[v] + "</th>");
-//                        
+//
 //                        out.println("            <th>" + realVal + "</th>");
 //                        out.println("        </tr>");
 //                    }
