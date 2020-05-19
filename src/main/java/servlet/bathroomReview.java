@@ -113,7 +113,7 @@ private void PrintBody (PrintWriter out)
     
     out.println("<body>");
     out.println("");
-    out.println("<h1>GMU Final Exam</h1>");
+    out.println("<h1>SWE432 Final Exam</h1>");
     out.println("<p>(Insert final exam topic here)</p>");
     out.println("<h3>Please select a building</h3>");
     out.println("<form method=\"post\" name=\"persist2file\" onsubmit=\"getScore(event);\" action=\"https://swe432-final.herokuapp.com/final/results\" id=\"myForm\">");
@@ -183,7 +183,7 @@ private void PrintBody (PrintWriter out)
     out.println("");
     out.println("<div id=\"message\"></div>");
     out.println("<p>Christopher Park, G00906790</p>");
-    out.println("<p><a href=\"https://github.com/mrchrisp96/SWE432-Final\">GitHub Executable Code</a></p>");
+    out.println("<p><a href=\"https://github.com/mrchrisp96/SWE432-Final\">GitHub code for final</a></p>");
     out.println("</form>");
     out.println("");
 //    out.println("</div>");
@@ -195,23 +195,15 @@ private void PrintBody (PrintWriter out)
     out.println("   var odor = -1;");
     out.println("   var clean = -1;");
     out.println("   var would = 0;");
-    
-    out.println("   var buildingStr;");
-    out.println("   var cleanStr;");
-    out.println("   var odorStr;");
-    out.println("   var commentStr;");
-    
     out.println("   var textarea = document.getElementById(\"userComments\").value.toLowerCase();");
     out.println("   let cIDs = [\"veryDirty\",\"dirty\",\"slightlyMessy\",\"mostlyClean\",\"completelyClean\"];");
     out.println("   let oIDs = [\"unbearable\",\"unpleasant\",\"moderate\",\"unnoticeable\",\"fresh\"];");
     out.println("   while (i < 5) {");
     out.println("     if (document.getElementById(cIDs[i]).checked){");
     out.println("       clean = i;");
-    out.println("       cleanStr = document.getElementById(cIDs[i]);");
     out.println("     }");
     out.println("     if (document.getElementById(oIDs[i]).checked){");
     out.println("       odor = i;");
-    out.println("       odorStr = document.getElementById(oIDs[i]);");
     out.println("     }");
     out.println("     i = i + 1;");
     out.println("   }");
