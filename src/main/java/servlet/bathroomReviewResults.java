@@ -103,7 +103,7 @@ private void PrintBody (PrintWriter out, HttpServletRequest request)
 {
     
     String predicate = request.getParameter("predicate").toLowerCase();
-    int[] boolVals = new int[0,1];
+    List<Integer> boolVals = Arrays.asList(0, 1);
 
     out.println("<html>");
     out.println("<head>");
@@ -160,12 +160,12 @@ private void PrintBody (PrintWriter out, HttpServletRequest request)
                     operator.append(predicateSplit.indexOf(y));
                 }
             }
-//            out.println("    <table text-align=\"left\" id=\"your-results\">");
-//            out.println("        <tr>");
-//            for(int g = 0; g < values.size(); g++) {
-//                out.println("            <th>" + valuesindexOf(g) + "</th>");
-//            }
-//            out.println("        </tr>");
+            out.println("    <table text-align=\"left\" id=\"your-results\">");
+            out.println("        <tr>");
+            for(String val: values) {
+                out.println("            <th>" + val + "</th>");
+            }
+            out.println("        </tr>");
 ////            for(int x = 0; x < )
 ////            out.println("        <tr>");
 ////            out.println("            <th>" + values[i] + "</th>");
