@@ -170,8 +170,8 @@ private void PrintBody (PrintWriter out, HttpServletRequest request)
             out.println("            <th>Result</th>");
             out.println("        </tr>");
             for(int x = 0; x < values.size(); x++) {
-                for(int y = 0; y < myIntArray.size(); y++) {
-                    for(int v = 0; v < myIntArray.size(); v++) {
+                for(int y = 0; y < 2; y++) {
+                    for(int v = 0; v < 2; v++) {
                         int realVal = 0;
                         out.println("        <tr>");
                         out.println("            <th>" + myIntArray[y] + "</th>");
