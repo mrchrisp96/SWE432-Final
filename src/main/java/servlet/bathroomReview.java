@@ -60,12 +60,6 @@ private void PrintBody (PrintWriter out)
     
     out.println("<html>");
     out.println("<head>");
-    out.println ("<script>");
-    out.println ("  function setFocus(){");
-    out.println ("    document.persist2file.NAME.focus();");
-    out.println ("  }");
-    out.println ("</script>");
-        
     out.println("<style type=\"text/css\">");
     out.println("   h1{");
     out.println("       text-align: center;");
@@ -93,15 +87,6 @@ private void PrintBody (PrintWriter out)
     out.println("   </style>");
     out.println("</head>");
     out.println("");
-
-//    out.println("<script type=\"text/babel\">");
-//    out.println("const Hello = () => {");
-//    out.println("return (");
-//    out.println("<h1>GMU Bathroom Reviewer</h1>");
-//    out.println(");");
-//    out.println("}");
-//    out.println("ReactDOM.render(<Hello/>, document.getElementById('root'));");
-//    out.println("</script>");
     
     out.println("<body>");
     out.println("");

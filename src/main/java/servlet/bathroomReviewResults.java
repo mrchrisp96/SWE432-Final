@@ -147,32 +147,44 @@ private void PrintBody (PrintWriter out, HttpServletRequest request)
     if(predicate != null) {
         List<String> predicateList = new ArrayList<String>(Arrays.asList(predicate.split(",")));
         for(int i = 0; i < predicateList.size(); i++) {
+            List<String> predicateSplit = new ArrayList<String>(Arrays.asList(predicateList[i].toLowerCase().split(" ")));
             
+            List<String> values = new ArrayList<String>();
+            List<String> operator = new ArrayList<String>();
+            for(int i = 0; i < predicateSplit.size(); i++) {
+                if(predicateSplit[i] != "and" || predicateSplit[i] != "or" || predicateSplit[i] != "||" || predicateSplit[i] != "&&" ||) {
+                    values.append(predicateSplit[i]);
+                } else {
+                    operator.append(predicateSplit[i]);
+                }
+            }
+            
+            out.println("<p>" + predicate + "</p>");
+            out.println("    <table text-align=\"left\" id=\"your-results\">");
+            out.println("        <tr>");
+            for(int i = 0; i < values.size(); i++) {
+                out.println("            <th>" + values[i] + "</th>");
+            }
+            out.println("        </tr>");
+//            out.println("        <tr>");
+//            out.println("            <th>Cleanliness</th>");
+//            out.println("            <td>" + cleanliness + "</td>");
+//            out.println("        </tr>");
+//            out.println("        <tr>");
+//            out.println("            <th>Odor</th>");
+//            out.println("            <td>" + odor + "</td>");
+//            out.println("        </tr>");
+//            out.println("        <tr>");
+//            out.println("            <th>Would you use this restroom again?</th>");
+//            out.println("            <td>" + wouldUseAgain + "</td>");
+//            out.println("        </tr>");
+//            out.println("        <tr>");
+//            out.println("            <th>Additional comments</th>");
+//            out.println("            <td>" + userComments + "</td>");
+//            out.println("        </tr>");
+            out.println("   </table>");
+            out.println("<br/><br/>");
         }
-        out.println("<p>" + predicate + "</p>");
-        out.println("    <table text-align=\"left\" id=\"your-results\">");
-        out.println("        <tr>");
-        out.println("            <th>Building</th>");
-        out.println("            <td>" + building + "</td>");
-        out.println("        </tr>");
-        out.println("        <tr>");
-        out.println("            <th>Cleanliness</th>");
-        out.println("            <td>" + cleanliness + "</td>");
-        out.println("        </tr>");
-        out.println("        <tr>");
-        out.println("            <th>Odor</th>");
-        out.println("            <td>" + odor + "</td>");
-        out.println("        </tr>");
-        out.println("        <tr>");
-        out.println("            <th>Would you use this restroom again?</th>");
-        out.println("            <td>" + wouldUseAgain + "</td>");
-        out.println("        </tr>");
-        out.println("        <tr>");
-        out.println("            <th>Additional comments</th>");
-        out.println("            <td>" + userComments + "</td>");
-        out.println("        </tr>");
-        out.println("   </table>");
-        out.println("<br/><br/>");
     } else {
         out.println("<p>Click the link below to start a new truth table!</p>");
         out.println("<p>");
