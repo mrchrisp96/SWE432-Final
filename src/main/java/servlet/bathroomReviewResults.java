@@ -101,6 +101,7 @@ public void doGet (HttpServletRequest request, HttpServletResponse response)
 ********************************************************* */
 private void PrintBody (PrintWriter out, HttpServletRequest request)
 {
+    
     String predicate = request.getParameter("predicate");
     
     out.println("<html>");
@@ -147,7 +148,8 @@ private void PrintBody (PrintWriter out, HttpServletRequest request)
     if(predicate != null) {
         List<String> predicateList = new ArrayList<String>(Arrays.asList(predicate.split(",")));
         for(int i = 0; i < predicateList.size(); i++) {
-            List<String> predicateSplit = new ArrayList<String>(Arrays.asList(predicateList[i].toLowerCase().split(" ")));
+            lowerPred = predicateList[i].toLowerCase();
+            List<String> predicateSplit = new ArrayList<String>(Arrays.asList(lowerPred.split(" ")));
             
             List<String> values = new ArrayList<String>();
             List<String> operator = new ArrayList<String>();
@@ -166,22 +168,12 @@ private void PrintBody (PrintWriter out, HttpServletRequest request)
                 out.println("            <th>" + values[i] + "</th>");
             }
             out.println("        </tr>");
-//            out.println("        <tr>");
-//            out.println("            <th>Cleanliness</th>");
-//            out.println("            <td>" + cleanliness + "</td>");
-//            out.println("        </tr>");
-//            out.println("        <tr>");
-//            out.println("            <th>Odor</th>");
-//            out.println("            <td>" + odor + "</td>");
-//            out.println("        </tr>");
-//            out.println("        <tr>");
-//            out.println("            <th>Would you use this restroom again?</th>");
-//            out.println("            <td>" + wouldUseAgain + "</td>");
-//            out.println("        </tr>");
-//            out.println("        <tr>");
-//            out.println("            <th>Additional comments</th>");
-//            out.println("            <td>" + userComments + "</td>");
-//            out.println("        </tr>");
+//            for(int x = 0; x < )
+            out.println("        <tr>");
+            out.println("            <th>" + values[i] + "</th>");
+            out.println("            <th>" + values[i] + "</th>");
+            out.println("            <th>" + values[i] + "</th>");
+            out.println("        </tr>");
             out.println("   </table>");
             out.println("<br/><br/>");
         }
