@@ -148,7 +148,7 @@ private void PrintBody (PrintWriter out, HttpServletRequest request)
     out.println("<h1>SWE432 Truth Table Results</h1>");
     if(predicate != null) {
         predicate = predicate.toLowerCase();
-        List<String> predicateList = new ArrayList<String>(Arrays.asList(predicate.split(",")));
+        List<String> predicateList = new ArrayList<String>(Arrays.asList(predicate.split(", ")));
         for(String eachPred: predicateList) {
             List<String> predicateSplit = new ArrayList<String>(Arrays.asList(eachPred.split(" ")));
             List<String> values = new ArrayList<String>();
@@ -170,14 +170,28 @@ private void PrintBody (PrintWriter out, HttpServletRequest request)
             }
             out.println("            <th>Result</th>");
             out.println("        </tr>");
-            for(int y = 0; y < 2; y++) {
-                for(int v = 0; v < 2; v++) {
-                    int realVal = 0;
-                    out.println("        <tr>");
-                    out.println("            <th>" + myIntArray[y] + "</th>");
-                    out.println("            <th>" + myIntArray[v] + "</th>");
-                    out.println("            <th>" + realVal + "</th>");
-                    out.println("        </tr>");
+//            if (index == N) {
+//               for (i=0; i<N; i++)
+//                  print(truthVals[i] + " ");
+//               print(newline);
+//            } else {
+//               for (i=0; i<2; i++) {
+//                  truthVals[index] = i;
+//                  printTruthTable(N, index + 1, truthVals);
+//               }
+//            }
+
+            for(int b = 0; b < values.size(); b++) {
+                for(int y = 0; y < 2; y++) {
+                    for(int v = 0; v < 2; v++) {
+                        int realVal = 0;
+                        out.println("        <tr>");
+                        out.println("            <th>" + myIntArray[y] + "</th>");
+                        out.println("            <th>" + myIntArray[v] + "</th>");
+                        
+                        out.println("            <th>" + realVal + "</th>");
+                        out.println("        </tr>");
+                    }
                 }
             }
             out.println("   </table>");
