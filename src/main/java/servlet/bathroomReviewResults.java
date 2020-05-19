@@ -25,7 +25,7 @@ public class bathroomReviewResults extends HttpServlet {
 
 // Location of servlet.
 static String RESOURCE_FILE = "allReviews.txt";
-
+List<String> boolVals = [0,1]
 
 
 // Other strings.
@@ -148,9 +148,9 @@ private void PrintBody (PrintWriter out, HttpServletRequest request)
     out.println("<h1>SWE432 Final Exam Results</h1>");
     if(predicate != null) {
         List<String> predicateList = new ArrayList<String>(Arrays.asList(predicate.split(",")));
-        for(int i = 0; i < predicateList.size(); i++) {
+        for(String eachPred: predicateList) {
 //            List<String> predicateSplit = new ArrayList<String>(Arrays.asList(predicateList.indexOf(0).split(" ")));
-            out.println("<p>" + predicateList.indexOf(0) + "</p>");
+            out.println("<p>" + eachPred + "</p>");
 //            List<String> values = new ArrayList<String>();
 //            List<String> operator = new ArrayList<String>();
 //            for(int y = 0; y < predicateSplit.size(); y++) {
