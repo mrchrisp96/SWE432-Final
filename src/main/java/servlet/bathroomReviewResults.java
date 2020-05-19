@@ -148,19 +148,18 @@ private void PrintBody (PrintWriter out, HttpServletRequest request)
     out.println("<h1>SWE432 Truth Table Results</h1>");
     if(predicate != null) {
         predicate = predicate.toLowerCase();
-        List<String> predicateList = new ArrayList<String>(Arrays.asList(predicate.split(", ")));
+        List<String> predicateList = new ArrayList<String>(Arrays.asList(predicate.split(",")));
         for(String eachPred: predicateList) {
             List<String> predicateSplit = new ArrayList<String>(Arrays.asList(eachPred.split(" ")));
             List<String> values = new ArrayList<String>();
             List<String> operator = new ArrayList<String>();
             for(String i: predicateSplit) {
                 out.println("<p>" + i + "</p>");
-                if(!i.equals(" ")) {
-                    if(!i.equals("and") && !i.equals("or") && !i.equals("||") && !i.equals("&&") && !i.equals("&") && !i.equals("|")) {
-                        values.add(i);
-                    } else {
-                        operator.add(i);
-                    }
+                i = i.trim();
+                if(!i.equals("and") && !i.equals("or") && !i.equals("||") && !i.equals("&&") && !i.equals("&") && !i.equals("|")) {
+                    values.add(i);
+                } else {
+                    operator.add(i);
                 }
             }
             out.println("    <table text-align=\"left\" id=\"your-results\">");
