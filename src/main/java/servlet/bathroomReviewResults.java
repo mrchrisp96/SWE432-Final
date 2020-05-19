@@ -148,7 +148,7 @@ private void PrintBody (PrintWriter out, HttpServletRequest request)
     if(predicate != null) {
         List<String> predicateList = new ArrayList<String>(Arrays.asList(predicate.split(",")));
         for(int i = 0; i < predicateList.size(); i++) {
-            lowerPred = predicateList[i].toLowerCase();
+            String lowerPred = predicateList[i].toLowerCase();
             List<String> predicateSplit = new ArrayList<String>(Arrays.asList(lowerPred.split(" ")));
             
             List<String> values = new ArrayList<String>();
