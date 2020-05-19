@@ -95,6 +95,20 @@ public void doGet (HttpServletRequest request, HttpServletResponse response)
 //}
 
 
+private String[] printTruthTable(int N, int index, String[] truthVals, String row) {
+    if (index == N) {
+        for (i=0; i<N; i++)
+            row += truthVals[i] + " "
+    } else {
+        for (i=0; i<2; i++) {
+            truthVals[index] = row;
+            row = "";
+            printTruthTable(N, index + 1, truthVals, row);
+        }
+    }
+    return truthVals;
+}
+
 /** *****************************************************
  *  Prints the <BODY> of the HTML page with the form data
  *  values from the parameters.
@@ -102,7 +116,8 @@ public void doGet (HttpServletRequest request, HttpServletResponse response)
 private void PrintBody (PrintWriter out, HttpServletRequest request)
 {
     String predicate = request.getParameter("predicate");
-    String[] myIntArray = {"True", "False"};
+    String[] myStrArray = {"True", "False"};
+    int[] myIntArray = {0, 1};
 //    List<Integer> boolVals = Arrays.asList(0, 1);
 
     out.println("<html>");
@@ -178,19 +193,20 @@ private void PrintBody (PrintWriter out, HttpServletRequest request)
 //                  printTruthTable(N, index + 1, truthVals);
 //               }
 //            }
+            
+            String emptyStr = "";
+            String[] temp = new String[2 ** values.size()];
+            String[] allRows = printTruthTable(values.size(), 0, temp, emptyStr);
 
             for(int b = 0; b < values.size(); b++) {
-                for(int y = 0; y < 2; y++) {
-                    for(int v = 0; v < 2; v++) {
-                        int realVal = 0;
-                        out.println("        <tr>");
-                        out.println("            <th>" + myIntArray[y] + "</th>");
-                        out.println("            <th>" + myIntArray[v] + "</th>");
-                        
-                        out.println("            <th>" + realVal + "</th>");
-                        out.println("        </tr>");
-                    }
+                out.println("        <tr>");
+                for(int v = 0; v < values.size(); v++) {
+                    int realVal = 0;
+                    out.println("            <th>" + allRows + "</th>");
+                    out.println("            <th>" + myIntArray[v] + "</th>");
                 }
+                out.println("            <th>" + realVal + "</th>");
+                out.println("        </tr>");
             }
             out.println("   </table>");
             out.println("<br/><br/>");
