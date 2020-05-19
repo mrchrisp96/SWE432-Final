@@ -161,18 +161,18 @@ private void PrintBody (PrintWriter out, HttpServletRequest request)
 //            }
             
             out.println("<p>" + predicateList + "</p>");
-            out.println("    <table text-align=\"left\" id=\"your-results\">");
-            out.println("        <tr>");
-            for(int i = 0; i < values.size(); i++) {
-                out.println("            <th>" + values[i] + "</th>");
-            }
-            out.println("        </tr>");
-//            for(int x = 0; x < )
-            out.println("        <tr>");
-            out.println("            <th>" + values[i] + "</th>");
-            out.println("            <th>" + values[i] + "</th>");
-            out.println("            <th>" + values[i] + "</th>");
-            out.println("        </tr>");
+//            out.println("    <table text-align=\"left\" id=\"your-results\">");
+//            out.println("        <tr>");
+//            for(int i = 0; i < values.size(); i++) {
+//                out.println("            <th>" + values[i] + "</th>");
+//            }
+//            out.println("        </tr>");
+////            for(int x = 0; x < )
+//            out.println("        <tr>");
+//            out.println("            <th>" + values[i] + "</th>");
+//            out.println("            <th>" + values[i] + "</th>");
+//            out.println("            <th>" + values[i] + "</th>");
+//            out.println("        </tr>");
             out.println("   </table>");
             out.println("<br/><br/>");
         }
