@@ -148,20 +148,19 @@ private void PrintBody (PrintWriter out, HttpServletRequest request)
     if(predicate != null) {
         List<String> predicateList = new ArrayList<String>(Arrays.asList(predicate.split(",")));
         for(int i = 0; i < predicateList.size(); i++) {
-            String lowerPred = predicateList[i].toLowerCase();
-            List<String> predicateSplit = new ArrayList<String>(Arrays.asList(lowerPred.split(" ")));
+//            String lowerPred = predicateList[i].toLowerCase();
+//            List<String> predicateSplit = new ArrayList<String>(Arrays.asList(lowerPred.split(" ")));
+//            List<String> values = new ArrayList<String>();
+//            List<String> operator = new ArrayList<String>();
+//            for(int y = 0; y < predicateSplit.size(); y++) {
+//                if(predicateSplit[y] != "and" || predicateSplit[y] != "or" || predicateSplit[y] != "||" || predicateSplit[y] != "&&") {
+//                    values.append(predicateSplit[i]);
+//                } else {
+//                    operator.append(predicateSplit[i]);
+//                }
+//            }
             
-            List<String> values = new ArrayList<String>();
-            List<String> operator = new ArrayList<String>();
-            for(int i = 0; i < predicateSplit.size(); i++) {
-                if(predicateSplit[i] != "and" || predicateSplit[i] != "or" || predicateSplit[i] != "||" || predicateSplit[i] != "&&") {
-                    values.append(predicateSplit[i]);
-                } else {
-                    operator.append(predicateSplit[i]);
-                }
-            }
-            
-            out.println("<p>" + predicate + "</p>");
+            out.println("<p>" + predicateList + "</p>");
             out.println("    <table text-align=\"left\" id=\"your-results\">");
             out.println("        <tr>");
             for(int i = 0; i < values.size(); i++) {
