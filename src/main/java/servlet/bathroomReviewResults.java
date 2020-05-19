@@ -171,7 +171,7 @@ private void PrintBody (PrintWriter out, HttpServletRequest request)
     } else {
         out.println("<p>Click the button below to start a new review!</p>");
         out.println("<p>");
-        out.println("<a href=\"https://swe432-final.herokuapp.com/final\"> <button>New review</button></a>");
+        out.println("<a href=\"https://swe432-final.herokuapp.com/final\">New Review</a>");
         out.println("</p>");
     }
 
