@@ -148,7 +148,7 @@ private void PrintBody (PrintWriter out, HttpServletRequest request)
     if(predicate != null) {
         List<String> predicateList = new ArrayList<String>(Arrays.asList(predicate.split(",")));
         for(int i = 0; i < predicateList.size(); i++) {
-            String lowerPred = predicateList[i].toLowerCase();
+            String lowerPred = predicateList[i];
 //            List<String> predicateSplit = new ArrayList<String>(Arrays.asList(lowerPred.split(" ")));
 //            List<String> values = new ArrayList<String>();
 //            List<String> operator = new ArrayList<String>();
@@ -160,7 +160,7 @@ private void PrintBody (PrintWriter out, HttpServletRequest request)
 //                }
 //            }
             
-            out.println("<p>" + lowerPred + "</p>");
+            out.println("<p>" + predicateList[i] + "</p>");
 //            out.println("    <table text-align=\"left\" id=\"your-results\">");
 //            out.println("        <tr>");
 //            for(int i = 0; i < values.size(); i++) {
