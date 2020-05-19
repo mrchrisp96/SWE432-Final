@@ -119,7 +119,7 @@ private void PrintBody (PrintWriter out)
     out.println("function getScore(event) {");
     out.println("   var textarea = document.getElementById(\"predicate\").value.toLowerCase();");
     out.println("   if(textarea) {");
-    out.println("       if((textarea.indexOf(\"or\") != -1) || (textarea.indexOf(\"and\") != -1) || (textarea.indexOf(\"&\") != -1) || (textarea.indexOf(\"|\") != -1)) {");
+    out.println("       if((textarea.indexOf(\"or\") == -1) || (textarea.indexOf(\"and\") == -1) || (textarea.indexOf(\"&\") == -1) || (textarea.indexOf(\"|\") == -1)) {");
     out.println("           window.alert(\"Please insert a valid predicate!\");");
     out.println("           event.preventDefault();");
     out.println("       }");
