@@ -156,7 +156,7 @@ private void PrintBody (PrintWriter out, HttpServletRequest request)
             List<String> operator = new ArrayList<String>();
             for(String i: predicateSplit) {
                 out.println("<p>" + i + "</p>");
-                if(!i.equals("and") || !i.equals"or") || !i.equals("||") || !i.equals("&&") || !i.equals("&") || !i.equals("|")) {
+                if(!i.equals("and") || !i.equals("or") || !i.equals("||") || !i.equals("&&") || !i.equals("&") || !i.equals("|")) {
                     values.add(i);
                 } else {
                     operator.add(i);
@@ -169,19 +169,19 @@ private void PrintBody (PrintWriter out, HttpServletRequest request)
             }
             out.println("            <th>Result</th>");
             out.println("        </tr>");
-//            for(int x = 0; x < 2**(values.size() + 1); x++) {
-//                for(int y = 0; y < myIntArray.size(); y++) {
-//                    for(int v = 0; v < myIntArray.size(); v++) {
-//                        int realVal = 0;
-//                        out.println("        <tr>");
-//                        out.println("            <th>" + myIntArray[y] + "</th>");
-//                        out.println("            <th>" + myIntArray[v] + "</th>");
-//
-//                        out.println("            <th>" + realVal + "</th>");
-//                        out.println("        </tr>");
-//                    }
-//                }
-//            }
+            for(int x = 0; x < values.size(); x++) {
+                for(int y = 0; y < myIntArray.size(); y++) {
+                    for(int v = 0; v < myIntArray.size(); v++) {
+                        int realVal = 0;
+                        out.println("        <tr>");
+                        out.println("            <th>" + myIntArray[y] + "</th>");
+                        out.println("            <th>" + myIntArray[v] + "</th>");
+
+                        out.println("            <th>" + realVal + "</th>");
+                        out.println("        </tr>");
+                    }
+                }
+            }
             out.println("   </table>");
             out.println("<br/><br/>");
         }
