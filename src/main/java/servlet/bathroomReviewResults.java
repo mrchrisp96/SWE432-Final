@@ -154,10 +154,10 @@ private void PrintBody (PrintWriter out, HttpServletRequest request)
             List<String> values = new ArrayList<String>();
             List<String> operator = new ArrayList<String>();
             for(String i: predicateSplit) {
-                if(eachPred.indexOf(y) != "and" || predicateSplit.indexOf(y) != "or" || predicateSplit.indexOf(y) != "||" || predicateSplit.indexOf(y) != "&&") {
-                    values.append(predicateSplit.indexOf(y));
+                if(i != "and" || i != "or" || i != "||" || i != "&&") {
+                    values.append(i);
                 } else {
-                    operator.append(predicateSplit.indexOf(y));
+                    operator.append(i);
                 }
             }
             out.println("    <table text-align=\"left\" id=\"your-results\">");
