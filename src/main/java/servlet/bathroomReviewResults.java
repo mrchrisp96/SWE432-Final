@@ -155,10 +155,12 @@ private void PrintBody (PrintWriter out, HttpServletRequest request)
             List<String> operator = new ArrayList<String>();
             for(String i: predicateSplit) {
                 out.println("<p>" + i + "</p>");
-                if(!i.equals("and") && !i.equals("or") && !i.equals("||") && !i.equals("&&") && !i.equals("&") && !i.equals("|")) {
-                    values.add(i);
-                } else {
-                    operator.add(i);
+                if(!i.equals(" ")) {
+                    if(!i.equals("and") && !i.equals("or") && !i.equals("||") && !i.equals("&&") && !i.equals("&") && !i.equals("|")) {
+                        values.add(i);
+                    } else {
+                        operator.add(i);
+                    }
                 }
             }
             out.println("    <table text-align=\"left\" id=\"your-results\">");
