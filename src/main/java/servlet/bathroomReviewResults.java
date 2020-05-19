@@ -98,10 +98,10 @@ public void doGet (HttpServletRequest request, HttpServletResponse response)
 
 private String[] printTruthTable(int N, int index, String[] truthVals, String row) {
     if (index == N) {
-        for (i=0; i<N; i++)
+        for (int i=0; i<N; i++)
             row += truthVals[i] + " ";
     } else {
-        for (i=0; i<2; i++) {
+        for (int i=0; i<2; i++) {
             truthVals[index] = row;
             row = "";
             printTruthTable(N, index + 1, truthVals, row);
@@ -184,31 +184,35 @@ private void PrintBody (PrintWriter out, HttpServletRequest request)
             }
             out.println("            <th>Result</th>");
             out.println("        </tr>");
-//            if (index == N) {
-//               for (i=0; i<N; i++)
-//                  print(truthVals[i] + " ");
-//               print(newline);
-//            } else {
-//               for (i=0; i<2; i++) {
-//                  truthVals[index] = i;
-//                  printTruthTable(N, index + 1, truthVals);
-//               }
-//            }
             
-            String emptyStr = "";
-            String[] temp = new String[Math.pow(2, values.size())];
-            String[] allRows = printTruthTable(values.size(), 0, temp, emptyStr);
+//            String emptyStr = "";
+//            String[] temp = new String[Math.pow(2, values.size())];
+//            String[] allRows = printTruthTable(values.size(), 0, temp, emptyStr);
 
-            for(int b = 0; b < values.size(); b++) {
+            int size = values.size();
+            
+            for (int i=0; i < size; i++) {
                 out.println("        <tr>");
-                for(int v = 0; v < values.size(); v++) {
-                    int realVal = 0;
-                    out.println("            <th>" + allRows + "</th>");
-                    out.println("            <th>" + myIntArray[v] + "</th>");
+                int divider = 1;
+                int curResult = 0;
+                for (int j=0; j < cols; j++) {
+                    int curVal = (i / divider) % 2);
+                    out.println("            <th>" + curVal + "</th>");
+                    divider = divider * 2;
                 }
-                out.println("            <th>" + realVal + "</th>");
                 out.println("        </tr>");
             }
+            
+//            for(int b = 0; b < values.size(); b++) {
+//                out.println("        <tr>");
+//                for(int v = 0; v < values.size(); v++) {
+//                    int realVal = 0;
+//                    out.println("            <th>" + allRows + "</th>");
+//                    out.println("            <th>" + myIntArray[v] + "</th>");
+//                }
+//                out.println("            <th>" + realVal + "</th>");
+//                out.println("        </tr>");
+//            }
             out.println("   </table>");
             out.println("<br/><br/>");
         }
