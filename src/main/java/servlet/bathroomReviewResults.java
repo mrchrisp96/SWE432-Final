@@ -148,12 +148,12 @@ private void PrintBody (PrintWriter out, HttpServletRequest request)
     if(predicate != null) {
         List<String> predicateList = new ArrayList<String>(Arrays.asList(predicate.split(",")));
         for(int i = 0; i < predicateList.size(); i++) {
-            List<String> predicateSplit = new ArrayList<String>(Arrays.asList(predicateList.indexOf.split(" ")));
+            List<String> predicateSplit = new ArrayList<String>(Arrays.asList(predicateList.indexOf(i).split(" ")));
             out.println("<p>" + predicateList.indexOf(0) + "</p>");
             List<String> values = new ArrayList<String>();
             List<String> operator = new ArrayList<String>();
             for(int y = 0; y < predicateSplit.size(); y++) {
-                if(predicateSplit[y] != "and" || predicateSplit[y] != "or" || predicateSplit[y] != "||" || predicateSplit[y] != "&&") {
+                if(predicateSplit.indexOf(y) != "and" || predicateSplitindexOf(y) != "or" || predicateSplitindexOf(y) != "||" || predicateSplitindexOf(y) != "&&") {
                     values.append(predicateSplit[i]);
                 } else {
                     operator.append(predicateSplit[i]);
@@ -161,8 +161,8 @@ private void PrintBody (PrintWriter out, HttpServletRequest request)
             }
             out.println("    <table text-align=\"left\" id=\"your-results\">");
             out.println("        <tr>");
-            for(int i = 0; i < values.size(); i++) {
-                out.println("            <th>" + values[i] + "</th>");
+            for(int g = 0; g < values.size(); g++) {
+                out.println("            <th>" + valuesindexOf(g) + "</th>");
             }
             out.println("        </tr>");
 //            for(int x = 0; x < )
