@@ -168,19 +168,19 @@ private void PrintBody (PrintWriter out, HttpServletRequest request)
                 out.println("            <th>" + val.toUpperCase() + "</th>");
             }
             out.println("        </tr>");
-            for(int x = 0; x < 2**(values.size() + 1); x++) {
-                for(int y = 0; y < myIntArray.size(); y++) {
-                    for(int v = 0; v < myIntArray.size(); v++) {
-                        int realVal = 0;
-                        out.println("        <tr>");
-                        out.println("            <th>" + myIntArray[y] + "</th>");
-                        out.println("            <th>" + myIntArray[v] + "</th>");
-                        
-                        out.println("            <th>" + realVal + "</th>");
-                        out.println("        </tr>");
-                    }
-                }
-            }
+//            for(int x = 0; x < 2**(values.size() + 1); x++) {
+//                for(int y = 0; y < myIntArray.size(); y++) {
+//                    for(int v = 0; v < myIntArray.size(); v++) {
+//                        int realVal = 0;
+//                        out.println("        <tr>");
+//                        out.println("            <th>" + myIntArray[y] + "</th>");
+//                        out.println("            <th>" + myIntArray[v] + "</th>");
+//                        
+//                        out.println("            <th>" + realVal + "</th>");
+//                        out.println("        </tr>");
+//                    }
+//                }
+//            }
             out.println("   </table>");
             out.println("<br/><br/>");
         }
