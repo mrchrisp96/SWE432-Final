@@ -101,8 +101,7 @@ public void doGet (HttpServletRequest request, HttpServletResponse response)
 ********************************************************* */
 private void PrintBody (PrintWriter out, HttpServletRequest request)
 {
-    
-    String predicate = request.getParameter("predicate").toLowerCase();
+    String predicate = request.getParameter("predicate");
     int[] myIntArray = {0, 1};
 //    List<Integer> boolVals = Arrays.asList(0, 1);
 
@@ -148,10 +147,10 @@ private void PrintBody (PrintWriter out, HttpServletRequest request)
     out.println("<body>");
     out.println("<h1>SWE432 Truth Table Results</h1>");
     if(predicate != null) {
+        predicate = predicate.toLowerCase();
         List<String> predicateList = new ArrayList<String>(Arrays.asList(predicate.split(",")));
         for(String eachPred: predicateList) {
             List<String> predicateSplit = new ArrayList<String>(Arrays.asList(eachPred.split(" ")));
-            out.println("<p>" + eachPred + "</p>");
             List<String> values = new ArrayList<String>();
             List<String> operator = new ArrayList<String>();
             for(String i: predicateSplit) {
