@@ -183,7 +183,7 @@ private void PrintBody (PrintWriter out)
     out.println("<button type=\"submit\" formmethod=\"post\" form=\"myForm\" value=\"Submit\">Submit</button>");
     out.println("");
     out.println("<div id=\"message\"></div>");
-    out.println("<p><a href=\"https://github.com/mrchrisp96/SWE432-Final\">GitHub code for final</a></p>");
+    out.println("<p><a href=\"https://github.com/mrchrisp96/SWE432-Final\" target=\"_blank\">GitHub code for final</a></p>");
     out.println("</form>");
     out.println("");
 //    out.println("</div>");
