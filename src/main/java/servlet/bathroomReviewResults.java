@@ -153,27 +153,26 @@ private void PrintBody (PrintWriter out, HttpServletRequest request)
             out.println("<p>" + eachPred + "</p>");
             List<String> values = new ArrayList<String>();
             List<String> operator = new ArrayList<String>();
-            for(String i: predicateSplit) {
-                out.println("<p>" + i + "</p>");
-                if(i != "and" || i != "or" || i != "||" || i != "&&") {
-                    values.append(i);
+            for(int g = 0; g < predicateSplit.size(); g++) {
+                if(predicateSplit.get(g) != "and" || predicateSplit.get(g) != "or" || predicateSplit.get(g) != "||" || predicateSplit.get(g) != "&&") {
+                    values.append(predicateSplit.get(g));
                 } else {
-                    operator.append(i);
+                    operator.append(predicateSplit.get(g));
                 }
             }
             out.println("    <table text-align=\"left\" id=\"your-results\">");
             out.println("        <tr>");
-//            for(String val: values) {
-//                out.println("            <th>" + val + "</th>");
-//            }
-//            out.println("        </tr>");
-//            for(int x = 0; x < ) {
-//                out.println("        <tr>");
-//                out.println("            <th>" + values[i] + "</th>");
-//                out.println("            <th>" + values[i] + "</th>");
-//                out.println("            <th>" + values[i] + "</th>");
-//                out.println("        </tr>");
-//            }
+            for(String val: values) {
+                out.println("            <th>" + val + "</th>");
+            }
+            out.println("        </tr>");
+            for(int x = 0; x < values.size(); i++) {
+                out.println("        <tr>");
+                out.println("            <th>" + values[i] + "</th>");
+                out.println("            <th>" + values[i] + "</th>");
+                out.println("            <th>" + values[i] + "</th>");
+                out.println("        </tr>");
+            }
             out.println("   </table>");
             out.println("<br/><br/>");
         }
