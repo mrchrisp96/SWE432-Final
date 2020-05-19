@@ -52,11 +52,7 @@ public void doGet (HttpServletRequest request, HttpServletResponse response)
        throws ServletException, IOException
 {
     //   RequestDispatcher view = request.getRequestDispatcher(indexpage);
-    String building = request.getParameter("building");
-    String cleanliness = request.getParameter("cleanliness");
-    String odor = request.getParameter("odor");
-    String wouldUseAgain = request.getParameter("wouldUseAgain");
-    String userComments = request.getParameter("userComments");
+    String predicate = request.getParameter("predicate");
     
    response.setContentType("text/html");
    PrintWriter out = response.getWriter();
@@ -77,11 +73,6 @@ public void doGet (HttpServletRequest request, HttpServletResponse response)
     //            e.printStackTrace();
     //        }
     //    }
-    if (building != null) {
-      PrintWriter entriesPrintWriter = new PrintWriter(new FileWriter(RESOURCE_FILE, true), true);
-      entriesPrintWriter.println(building + "," + cleanliness + "," + odor + "," + wouldUseAgain + "," + userComments + "\n");
-      entriesPrintWriter.close();
-    }
    PrintBody(out, request);
    PrintTail(out);
 } // End doGet
@@ -96,11 +87,7 @@ public void doGet (HttpServletRequest request, HttpServletResponse response)
 ********************************************************* */
 private void PrintBody (PrintWriter out, HttpServletRequest request)
 {
-    String building = request.getParameter("building");
-    String cleanliness = request.getParameter("cleanliness");
-    String odor = request.getParameter("odor");
-    String wouldUseAgain = request.getParameter("wouldUseAgain");
-    String userComments = request.getParameter("userComments");
+    String predicate = request.getParameter("predicate");
     
     out.println("<html>");
     out.println("<head>");
@@ -143,8 +130,10 @@ private void PrintBody (PrintWriter out, HttpServletRequest request)
     out.println("");
     out.println("<body>");
     out.println("<h1>SWE432 Final Exam Results</h1>");
-    if(building != null) {
-        out.println("<p>Review Results</p>");
+    if(predicate != null) {
+        List<String> predicateList = new ArrayList<String>(Arrays.asList(predicate.split(" , ")));
+        
+        out.println("<p>" + predicate + "</p>");
         out.println("    <table text-align=\"left\" id=\"your-results\">");
         out.println("        <tr>");
         out.println("            <th>Building</th>");
@@ -169,7 +158,7 @@ private void PrintBody (PrintWriter out, HttpServletRequest request)
         out.println("   </table>");
         out.println("<br/><br/>");
     } else {
-        out.println("<p>Click the link below to start a new review!</p>");
+        out.println("<p>Click the link below to start a new truth table!</p>");
         out.println("<p>");
         out.println("<a href=\"https://swe432-final.herokuapp.com/final\">New Review</a>");
         out.println("</p>");
