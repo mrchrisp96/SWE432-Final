@@ -103,7 +103,7 @@ private void PrintBody (PrintWriter out, HttpServletRequest request)
 {
     
     String predicate = request.getParameter("predicate").toLowerCase();
-    List<String> boolVals = [0,1];
+    int[] boolVals = new int[0,1];
 
     out.println("<html>");
     out.println("<head>");
@@ -149,17 +149,17 @@ private void PrintBody (PrintWriter out, HttpServletRequest request)
     if(predicate != null) {
         List<String> predicateList = new ArrayList<String>(Arrays.asList(predicate.split(",")));
         for(String eachPred: predicateList) {
-//            List<String> predicateSplit = new ArrayList<String>(Arrays.asList(predicateList.indexOf(0).split(" ")));
+            List<String> predicateSplit = new ArrayList<String>(Arrays.asList(eachPred.split(" ")));
             out.println("<p>" + eachPred + "</p>");
-//            List<String> values = new ArrayList<String>();
-//            List<String> operator = new ArrayList<String>();
-//            for(int y = 0; y < predicateSplit.size(); y++) {
-//                if(predicateSplit.indexOf(y) != "and" || predicateSplit.indexOf(y) != "or" || predicateSplit.indexOf(y) != "||" || predicateSplit.indexOf(y) != "&&") {
-//                    values.append(predicateSplit.indexOf(y));
-//                } else {
-//                    operator.append(predicateSplit.indexOf(y));
-//                }
-//            }
+            List<String> values = new ArrayList<String>();
+            List<String> operator = new ArrayList<String>();
+            for(int y = 0; y < predicateSplit.size(); y++) {
+                if(eachPred.indexOf(y) != "and" || predicateSplit.indexOf(y) != "or" || predicateSplit.indexOf(y) != "||" || predicateSplit.indexOf(y) != "&&") {
+                    values.append(predicateSplit.indexOf(y));
+                } else {
+                    operator.append(predicateSplit.indexOf(y));
+                }
+            }
 //            out.println("    <table text-align=\"left\" id=\"your-results\">");
 //            out.println("        <tr>");
 //            for(int g = 0; g < values.size(); g++) {
