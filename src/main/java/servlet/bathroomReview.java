@@ -114,7 +114,7 @@ private void PrintBody (PrintWriter out)
     out.println("<body>");
     out.println("");
     out.println("<h1>GMU Final Exam</h1>");
-    out.println("<p>This web app allows you to review the bathrooms of a building at GMU in Fairfax</p>");
+    out.println("<p>(Insert final exam topic here)</p>");
     out.println("<h3>Please select a building</h3>");
     out.println("<form method=\"post\" name=\"persist2file\" onsubmit=\"getScore(event);\" action=\"https://swe432-final.herokuapp.com/final/results\" id=\"myForm\">");
     out.println("<select name=\"building\" id=\"building\">");
@@ -182,6 +182,7 @@ private void PrintBody (PrintWriter out)
     out.println("<button type=\"submit\" formmethod=\"post\" form=\"myForm\" value=\"Submit\">Submit</button>");
     out.println("");
     out.println("<div id=\"message\"></div>");
+    out.println("<p>Christopher Park, G00906790</p>");
     out.println("    <p><a href=\"https://github.com/mrchrisp96/SWE432-Final\">GitHub Executable Code</a></p>");
     out.println("</form>");
     out.println("");
@@ -203,7 +204,7 @@ private void PrintBody (PrintWriter out)
     out.println("   var textarea = document.getElementById(\"userComments\").value.toLowerCase();");
     out.println("   let cIDs = [\"veryDirty\",\"dirty\",\"slightlyMessy\",\"mostlyClean\",\"completelyClean\"];");
     out.println("   let oIDs = [\"unbearable\",\"unpleasant\",\"moderate\",\"unnoticeable\",\"fresh\"];");
-    out.println("   while (i<5) {");
+    out.println("   while (i < 5) {");
     out.println("     if (document.getElementById(cIDs[i]).checked){");
     out.println("       clean = i;");
     out.println("       cleanStr = document.getElementById(cIDs[i]);");
@@ -220,7 +221,7 @@ private void PrintBody (PrintWriter out)
     out.println("");
     out.println("   let score = (12 * clean) + (8 * odor) + (would * 20);");
     out.println("   if(textarea) {");
-    out.println("       if((textarea.indexOf(\"fuck\") != -1) || (textarea.indexOf(\"shit\") != -1) || (textarea.indexOf(\"gay\") != -1) || (textarea.indexOf(\"fag\") != -1)) {");
+    out.println("       if((textarea.indexOf(\"fuck\") != -1) || (textarea.indexOf(\"shit\") != -1) || (textarea.indexOf(\"gay\") != -1) || (textarea.indexOf(\"fag\") != -1)) || (textarea.indexOf(\"cunt\") != -1) || (textarea.indexOf(\"bitch\") != -1){");
     out.println("           window.alert(\"Please omit innapropriate words!\");");
     out.println("           event.preventDefault();");
     out.println("       } else {");
