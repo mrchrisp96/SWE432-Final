@@ -150,12 +150,12 @@ private void PrintBody (PrintWriter out, HttpServletRequest request)
         predicate = predicate.toLowerCase();
         List<String> predicateList = new ArrayList<String>(Arrays.asList(predicate.split(",")));
         for(String eachPred: predicateList) {
+            eachPred = eachPred.trim();
             List<String> predicateSplit = new ArrayList<String>(Arrays.asList(eachPred.split(" ")));
             List<String> values = new ArrayList<String>();
             List<String> operator = new ArrayList<String>();
             for(String i: predicateSplit) {
                 out.println("<p>" + i + "</p>");
-                i = i.trim();
                 if(!i.equals("and") && !i.equals("or") && !i.equals("||") && !i.equals("&&") && !i.equals("&") && !i.equals("|")) {
                     values.add(i);
                 } else {
