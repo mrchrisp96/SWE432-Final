@@ -193,7 +193,7 @@ private void PrintBody (PrintWriter out, HttpServletRequest request)
 
             int numRows = (int) Math.pow(2, rowSize);
             for (int i = 0; i < numRows; i++) {
-                String[] tempValues = new String[numRows];
+                int[] tempValues = new int[numRows];
                 int results = -1;
                 out.println("        <tr>");
                 int divider = 1;
