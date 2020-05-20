@@ -167,7 +167,7 @@ private void PrintBody (PrintWriter out, HttpServletRequest request)
         List<String> predicateList = new ArrayList<String>(Arrays.asList(predicate.split(",")));
         for(String eachPred: predicateList) {
             int rowSize = 0;
-            eachPred = eachPred.trim();
+            eachPred = eachPred.trim().replaceAll(" +", " ");
             List<String> predicateSplit = new ArrayList<String>(Arrays.asList(eachPred.split(" ")));
             List<String> values = new ArrayList<String>();
             List<String> operator = new ArrayList<String>();
@@ -204,17 +204,6 @@ private void PrintBody (PrintWriter out, HttpServletRequest request)
                 // get result here
                 out.println("        </tr>");
             }
-            
-//            for(int b = 0; b < values.size(); b++) {
-//                out.println("        <tr>");
-//                for(int v = 0; v < values.size(); v++) {
-//                    int realVal = 0;
-//                    out.println("            <th>" + allRows + "</th>");
-//                    out.println("            <th>" + myIntArray[v] + "</th>");
-//                }
-//                out.println("            <th>" + realVal + "</th>");
-//                out.println("        </tr>");
-//            }
             out.println("   </table>");
             out.println("<br/><br/>");
         }
