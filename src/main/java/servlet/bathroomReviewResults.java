@@ -180,7 +180,7 @@ private void PrintBody (PrintWriter out, HttpServletRequest request)
                 }
             }
             out.println("    <table text-align=\"left\" id=\"your-results\">");
-            out.println("    <caption>" + eachPred.toUpperCase() + "</caption>");
+            out.println("    <p>" + eachPred.toUpperCase() + "</p>");
             out.println("        <tr>");
             for(String val: values) {
                 out.println("            <th>" + val.toUpperCase() + "</th>");
