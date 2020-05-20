@@ -191,7 +191,7 @@ private void PrintBody (PrintWriter out, HttpServletRequest request)
 //            String[] temp = new String[Math.pow(2, values.size())];
 //            String[] allRows = printTruthTable(values.size(), 0, temp, emptyStr);
 
-            int numRows = Math.pow(2, rowSize);
+            int numRows = (int) Math.pow(2, rowSize);
             for (int i = 0; i < numRows; i++) {
                 out.println("        <tr>");
                 int divider = 1;
