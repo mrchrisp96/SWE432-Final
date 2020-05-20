@@ -90,13 +90,12 @@ private void PrintBody (PrintWriter out)
     
     out.println("<body>");
     out.println("");
-    out.println("<h1>SWE432 Final Exam</h1>");
-    out.println("<p>Truth Table</p>");
+    out.println("<h1>SWE432 Truth Table</h1>");
     out.println("<p>Christopher Park, G00906790</p>");
     out.println("<form method=\"post\" name=\"persist2file\" onsubmit=\"getScore(event);\" action=\"https://swe432-final.herokuapp.com/final/results\" id=\"myForm\">");
     out.println("");
     out.println("<h3>");
-    out.println("    Input a boolean predicate");
+    out.println("    Please enter a boolean predicate");
     out.println("</h3>");
     out.println("");
     out.println("<textarea id=\"predicate\" name=\"predicate\" form=\"myForm\" style=\"width:700px; height:150px;\" rows=\"50\" cols=\"300\" placeholder=\"Enter your predicate...\"></textarea>");
@@ -108,8 +107,8 @@ private void PrintBody (PrintWriter out)
     out.println("");
     out.println("<div id=\"message\"></div>");
     out.println("<p><a href=\"https://github.com/mrchrisp96/SWE432-Final\" target=\"_blank\">GitHub code for final</a></p>");
-    out.println("<p>Examples: A OR B, A AND B, A | B, A & B, etc...</p>");
-    out.println("<p>Note, please make sure to split different predicates by a comma and the predicate by a space!</p>");
+    out.println("<p>Examples: A OR B, A AND B, A || B, A && B, etc...</p>");
+    out.println("<p>Note, please make sure to split different predicates by a comma and the predicates by spaces!</p>");
 
     out.println("</form>");
     out.println("");
