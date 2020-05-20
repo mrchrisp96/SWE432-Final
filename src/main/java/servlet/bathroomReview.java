@@ -107,7 +107,7 @@ private void PrintBody (PrintWriter out)
     out.println("");
     out.println("<div id=\"message\"></div>");
     out.println("<p><a href=\"https://github.com/mrchrisp96/SWE432-Final\" target=\"_blank\">GitHub code for final</a></p>");
-    out.println("<p>Examples: A OR B, A AND B, A || B, A && B, etc... (XOR supported)</p>");
+    out.println("<p>Examples: A OR B, A AND B, A || B, A && B, etc... (XOR supported, \"XOR\", \"^\")</p>");
     out.println("<p>Please make sure to split different predicates by a comma and the predicates by spaces!</p>");
 
     out.println("</form>");
