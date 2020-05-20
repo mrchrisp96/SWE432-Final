@@ -221,19 +221,17 @@ private void PrintBody (PrintWriter out, HttpServletRequest request)
                     } else {
                         if(op.equals("or") || op.equals("||")) {
                             if(results == 0) {
-                                results = tempValues[indexOne] + tempValues[indexTwo];
-                                indexOne++;
+                                results = results + tempValues[indexTwo];
                                 indexTwo++;
                             } else {
                                 break;
                             }
                         }
                         if(op.equals("and") || op.equals("&&")) {
-                            results = tempValues[indexOne] * tempValues[indexTwo];
+                            results = results * tempValues[indexTwo];
                             if(results == 0) {
                                 break;
                             }
-                            indexOne++;
                             indexTwo++;
                         }
                     }
