@@ -220,6 +220,11 @@ private void PrintBody (PrintWriter out, HttpServletRequest request)
                             indexOne++;
                             indexTwo++;
                         }
+                        if(op.equals("xor") || op.equals("^")) {
+                            results = tempValues[indexOne] ^ tempValues[indexTwo];
+                            indexOne++;
+                            indexTwo++;
+                        }
                     } else {
                         if(op.equals("or") || op.equals("||")) {
                             if(results == 0) {
