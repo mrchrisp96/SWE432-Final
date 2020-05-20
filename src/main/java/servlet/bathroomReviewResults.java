@@ -191,7 +191,7 @@ private void PrintBody (PrintWriter out, HttpServletRequest request)
 //            String[] temp = new String[Math.pow(2, values.size())];
 //            String[] allRows = printTruthTable(values.size(), 0, temp, emptyStr);
 
-            for (int i = 0; i < rowSize; i++) {
+            for (int i = 0; i < (2 ** rowSize); i++) {
                 out.println("        <tr>");
                 int divider = 1;
                 int curResult = 0;
@@ -200,6 +200,7 @@ private void PrintBody (PrintWriter out, HttpServletRequest request)
                     out.println("            <th>" + curVal + "</th>");
                     divider = divider * 2;
                 }
+                // get result here
                 out.println("        </tr>");
             }
             
