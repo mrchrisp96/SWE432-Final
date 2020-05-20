@@ -210,10 +210,7 @@ private void PrintBody (PrintWriter out, HttpServletRequest request)
                     if(results == -1) {
                         if(op.equals("or") || op.equals("||")) {
                             results = tempValues[indexOne] + tempValues[indexTwo];
-                            if(results == 1 || results == 2) {
-                                results = 1;
-                                break;
-                            }
+                            if(results == 2) { results = 1; }
                             indexOne++;
                             indexTwo++;
                         }
@@ -256,6 +253,11 @@ private void PrintBody (PrintWriter out, HttpServletRequest request)
     }
 
     out.println("<hr class=\"rounded\">");
+    
+    out.println("<p>Click the link below to start a new truth table!</p>");
+    out.println("<p>");
+    out.println("<a href=\"https://swe432-final.herokuapp.com/final\">New Truth Table</a>");
+    out.println("</p>");
     
     out.println("  <br/><br/>");
     out.println("");
