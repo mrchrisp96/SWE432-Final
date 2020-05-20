@@ -252,12 +252,7 @@ private void PrintBody (PrintWriter out, HttpServletRequest request)
             out.println("   </table>");
             out.println("<br/><br/>");
         }
-    } else {
-        out.println("<p>Click the link below to start a new truth table!</p>");
-        out.println("<p>");
-        out.println("<a href=\"https://swe432-final.herokuapp.com/final\">New Truth Table</a>");
-        out.println("</p>");
-    }
+    } 
 
     out.println("<hr class=\"rounded\">");
     
