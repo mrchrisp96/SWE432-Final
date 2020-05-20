@@ -193,6 +193,8 @@ private void PrintBody (PrintWriter out, HttpServletRequest request)
 
             int numRows = (int) Math.pow(2, rowSize);
             for (int i = 0; i < numRows; i++) {
+                String[] tempValues = new String[numRows];
+                int results = -1;
                 out.println("        <tr>");
                 int divider = 1;
                 int curResult = 0;
@@ -200,7 +202,43 @@ private void PrintBody (PrintWriter out, HttpServletRequest request)
                     int curVal = (i / divider) % 2;
                     out.println("            <th>" + curVal + "</th>");
                     divider = divider * 2;
+                    tempValues[j] = curVal;
                 }
+                int indexOne = 0;
+                int indexTwo = 1;
+                for(String op: operator) {
+                    if(results == -1) {
+                        if(op.equals("or") || op.equals("||")) {
+                            results = tempValues[indexOne] + tempValues[indexTwo];
+                            indexOne++;
+                            indexTwo++;
+                        }
+                        if(op.equals("and") || op.equals("&&")) {
+                            results = tempValues[indexOne] * tempValues[indexTwo];
+                            indexOne++;
+                            indexTwo++;
+                        }
+                    } else {
+                        if(op.equals("or") || op.equals("||")) {
+                            if(results == 0) {
+                                results = tempValues[indexOne] + tempValues[indexTwo];
+                                indexOne++;
+                                indexTwo++;
+                            } else {
+                                break;
+                            }
+                        }
+                        if(op.equals("and") || op.equals("&&")) {
+                            results = tempValues[indexOne] * tempValues[indexTwo];
+                            if(results == 0) {
+                                break;
+                            }
+                            indexOne++;
+                            indexTwo++;
+                        }
+                    }
+                }
+                out.println("            <th>" + results + "</th>");
                 // get result here
                 out.println("        </tr>");
             }
@@ -210,7 +248,7 @@ private void PrintBody (PrintWriter out, HttpServletRequest request)
     } else {
         out.println("<p>Click the link below to start a new truth table!</p>");
         out.println("<p>");
-        out.println("<a href=\"https://swe432-final.herokuapp.com/final\">New Review</a>");
+        out.println("<a href=\"https://swe432-final.herokuapp.com/final\">New Truth Table</a>");
         out.println("</p>");
     }
 
