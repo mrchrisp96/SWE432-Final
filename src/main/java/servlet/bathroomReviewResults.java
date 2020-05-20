@@ -210,6 +210,9 @@ private void PrintBody (PrintWriter out, HttpServletRequest request)
                     if(results == -1) {
                         if(op.equals("or") || op.equals("||")) {
                             results = tempValues[indexOne] + tempValues[indexTwo];
+                            if(results == 1 || results == 2) {
+                                break;
+                            }
                             indexOne++;
                             indexTwo++;
                         }
