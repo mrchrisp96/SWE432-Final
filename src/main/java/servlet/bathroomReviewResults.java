@@ -172,7 +172,7 @@ private void PrintBody (PrintWriter out, HttpServletRequest request)
             List<String> values = new ArrayList<String>();
             List<String> operator = new ArrayList<String>();
             for(String i: predicateSplit) {
-                if(!i.equals("and") && !i.equals("or") && !i.equals("||") && !i.equals("&&") && !i.equals("&") && !i.equals("|")) {
+                if(!i.equals("and") && !i.equals("or") && !i.equals("||") && !i.equals("&&") && !i.equals("&") && !i.equals("|") && !i.equals("xor") && !i.equals("^")) {
                     values.add(i);
                     rowSize++;
                 } else {
@@ -197,12 +197,11 @@ private void PrintBody (PrintWriter out, HttpServletRequest request)
                 int[] tempValues = new int[numRows];
                 int results = -1;
                 out.println("        <tr>");
-                int divider = 1;
-                int curResult = 0;
+                int divideBy = 1;
                 for (int j = 0; j < values.size(); j++) {
-                    int curVal = (i / divider) % 2;
+                    int curVal = (i / divideBy) % 2;
                     out.println("            <th>" + curVal + "</th>");
-                    divider = divider * 2;
+                    divideBy = divideBy * 2;
                     tempValues[j] = curVal;
                 }
                 int indexOne = 0;
@@ -234,12 +233,14 @@ private void PrintBody (PrintWriter out, HttpServletRequest request)
                                 results = 1;
                                 break;
                             }
-                        }
-                        if(op.equals("and") || op.equals("&&")) {
+                        } else if(op.equals("and") || op.equals("&&")) {
                             results = results * tempValues[indexTwo];
                             if(results == 0) {
                                 break;
                             }
+                            indexTwo++;
+                        } else if(op.equals("xor") || op.equals("^")) {
+                            results = results ^ tempValues[indexTwo];
                             indexTwo++;
                         }
                     }
